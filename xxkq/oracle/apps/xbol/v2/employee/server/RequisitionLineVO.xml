@@ -7,6 +7,7 @@
    CustomQuery="true"
    RowClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVORowImpl"
    ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVOImpl"
+   FetchMode="FETCH_AS_NEEDED"
    UseGlueCode="false" >
    <SQLQuery><![CDATA[
 SELECT requisition_line_id
@@ -138,12 +139,11 @@ MSI.primary_unit_of_measure*/
       EntityUsage="RequisitionLineEO"
       AliasName="UNIFORM_SET_LINE_ID" >
    </ViewAttribute>
-    <ViewAttribute
+   <ViewAttribute
       Name="LineNumber"
       EntityAttrName="LineNumber"
       EntityUsage="RequisitionLineEO"
-      AliasName="LineNumber"
-      ColumnType="VARCHAR2" >
+      AliasName="LineNumber" >
    </ViewAttribute>
    <ViewAttribute
       Name="InventoryItemId"
@@ -406,6 +406,16 @@ MSI.primary_unit_of_measure*/
       ColumnType="VARCHAR2"
       AliasName="VIEW_ATTR"
       Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SelectedFlag"
+      IsSelected="false"
+      IsPersistent="false"
+      DefaultValue="Y"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
       SQLType="VARCHAR" >
    </ViewAttribute>
 </ViewObject>

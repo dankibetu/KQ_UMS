@@ -55,10 +55,6 @@
       ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionSearchVO" >
    </ViewUsage>
    <ViewUsage
-      Name="EntitlementHeaderVO1"
-      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementHeaderVO" >
-   </ViewUsage>
-   <ViewUsage
       Name="EntitlementLineVO1"
       ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementLineVO" >
    </ViewUsage>
