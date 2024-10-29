@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="MaterniityTempVO"
+   SelectList="RequisitionLineEO.REQUISITION_HEADER_ID, 
+       RequisitionLineEO.REQUISITION_LINE_ID, 
+       RequisitionLineEO.LINE_NUMBER, 
+       RequisitionLineEO.UNIFORM_SET_LINE_ID, 
+       RequisitionLineEO.INVENTORY_ITEM_ID, 
+       RequisitionLineEO.ORGANIZATION_ID, 
+       RequisitionLineEO.REQUESTED_QTY, 
+       RequisitionLineEO.DAMAGE_QTY, 
+       RequisitionLineEO.CHARGABLE_QTY, 
+       RequisitionLineEO.NEED_BY_DATE, 
+       RequisitionLineEO.REASON_CODE, 
+       RequisitionLineEO.REMARKS, 
+       RequisitionLineEO.STATUS, 
+       RequisitionLineEO.RETURN_ITEM_ID, 
+       RequisitionLineEO.RETURN_ORGANIZATION_ID, 
+       RequisitionLineEO.TOTAL_ISSUED_QTY, 
+       RequisitionLineEO.RETURNED_QTY, 
+       RequisitionLineEO.CREATED_BY, 
+       RequisitionLineEO.CREATION_DATE, 
+       RequisitionLineEO.LAST_UPDATED_BY, 
+       RequisitionLineEO.LAST_UPDATE_DATE, 
+       RequisitionLineEO.LAST_UPDATE_LOGIN, 
+       RequisitionLineEO.ATTRIBUTE1, 
+       RequisitionLineEO.ATTRIBUTE2, 
+       RequisitionLineEO.ATTRIBUTE3, 
+       RequisitionLineEO.ATTRIBUTE4, 
+       RequisitionLineEO.ATTRIBUTE5, 
+       RequisitionLineEO.ATTRIBUTE6, 
+       RequisitionLineEO.ATTRIBUTE7, 
+       RequisitionLineEO.ATTRIBUTE8, 
+       RequisitionLineEO.ATTRIBUTE9, 
+       RequisitionLineEO.ATTRIBUTE10, 
+       RequisitionLineEO.ATTRIBUTE11, 
+       RequisitionLineEO.ATTRIBUTE12, 
+       RequisitionLineEO.ATTRIBUTE13, 
+       RequisitionLineEO.ATTRIBUTE14, 
+       RequisitionLineEO.ATTRIBUTE15, 
+       RequisitionLineEO.ATTRIBUTE16, 
+       RequisitionLineEO.ATTRIBUTE17, 
+       RequisitionLineEO.ATTRIBUTE18, 
+       RequisitionLineEO.ATTRIBUTE19, 
+       RequisitionLineEO.ATTRIBUTE20"
+   FromList="APPS.XX_UMS_REQUISITION_LINE_V2 RequisitionLineEO"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.MaterniityTempVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.MaterniityTempVOImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="RequisitionLineEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="RequisitionHeaderId"
+      EntityAttrName="RequisitionHeaderId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REQUISITION_HEADER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionLineId"
+      EntityAttrName="RequisitionLineId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REQUISITION_LINE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LineNumber"
+      EntityAttrName="LineNumber"
+      EntityUsage="RequisitionLineEO"
+      AliasName="LINE_NUMBER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetLineId"
+      EntityAttrName="UniformSetLineId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="UNIFORM_SET_LINE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="InventoryItemId"
+      EntityAttrName="InventoryItemId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="INVENTORY_ITEM_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationId"
+      EntityAttrName="OrganizationId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ORGANIZATION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequestedQty"
+      EntityAttrName="RequestedQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REQUESTED_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DamageQty"
+      EntityAttrName="DamageQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="DAMAGE_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ChargableQty"
+      EntityAttrName="ChargableQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="CHARGABLE_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="NeedByDate"
+      EntityAttrName="NeedByDate"
+      EntityUsage="RequisitionLineEO"
+      AliasName="NEED_BY_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReasonCode"
+      EntityAttrName="ReasonCode"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REASON_CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      EntityAttrName="Remarks"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REMARKS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Status"
+      EntityAttrName="Status"
+      EntityUsage="RequisitionLineEO"
+      AliasName="STATUS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReplacementItemId"
+      EntityAttrName="ReplacementItemId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="RETURN_ITEM_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReplacementOrganizationId"
+      EntityAttrName="ReplacementOrganizationId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="RETURN_ORGANIZATION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TotalIssuedQty"
+      EntityAttrName="TotalIssuedQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="TOTAL_ISSUED_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReturnedQty"
+      EntityAttrName="ReturnedQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="RETURNED_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      IsNotNull="true"
+      EntityAttrName="CreatedBy"
+      EntityUsage="RequisitionLineEO"
+      AliasName="CREATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      IsNotNull="true"
+      EntityAttrName="CreationDate"
+      EntityUsage="RequisitionLineEO"
+      AliasName="CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      IsNotNull="true"
+      EntityAttrName="LastUpdatedBy"
+      EntityUsage="RequisitionLineEO"
+      AliasName="LAST_UPDATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      IsNotNull="true"
+      EntityAttrName="LastUpdateDate"
+      EntityUsage="RequisitionLineEO"
+      AliasName="LAST_UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      IsNotNull="true"
+      EntityAttrName="LastUpdateLogin"
+      EntityUsage="RequisitionLineEO"
+      AliasName="LAST_UPDATE_LOGIN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute1"
+      EntityAttrName="Attribute1"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute2"
+      EntityAttrName="Attribute2"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute3"
+      EntityAttrName="Attribute3"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE3" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute4"
+      EntityAttrName="Attribute4"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE4" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute5"
+      EntityAttrName="Attribute5"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE5" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute6"
+      EntityAttrName="Attribute6"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE6" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute7"
+      EntityAttrName="Attribute7"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE7" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute8"
+      EntityAttrName="Attribute8"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE8" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute9"
+      EntityAttrName="Attribute9"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE9" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute10"
+      EntityAttrName="Attribute10"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE10" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute11"
+      EntityAttrName="Attribute11"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE11" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute12"
+      EntityAttrName="Attribute12"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE12" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute13"
+      EntityAttrName="Attribute13"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE13" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute14"
+      EntityAttrName="Attribute14"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE14" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute15"
+      EntityAttrName="Attribute15"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE15" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute16"
+      EntityAttrName="Attribute16"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE16" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute17"
+      EntityAttrName="Attribute17"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE17" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute18"
+      EntityAttrName="Attribute18"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE18" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute19"
+      EntityAttrName="Attribute19"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE19" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute20"
+      EntityAttrName="Attribute20"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ATTRIBUTE20" >
+   </ViewAttribute>
+</ViewObject>

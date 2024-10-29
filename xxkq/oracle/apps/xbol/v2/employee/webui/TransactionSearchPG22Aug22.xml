@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="pagelayoutRN" windowTitle="Transaction Search Page" title="" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.SearchAM" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.TransactionSearchCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:query id="QueryRN" mode="none">
+               <ui:contents>
+                  <oa:table id="TableRN" width="100%" text="Transaction Search Details">
+                     <ui:contents>
+                        <oa:messageStyledText id="TransactionNumber" dataType="VARCHAR2" prompt="Transaction Number" viewName="TransactionSearchVO1" viewAttr="Transactionnumber" maximumLength="100"/>
+                        <oa:messageStyledText id="TransactionStatus" dataType="VARCHAR2" prompt="Transaction Status" viewName="TransactionSearchVO1" viewAttr="Transactionstatus" maximumLength="50" rendered="true"/>
+                        <oa:messageStyledText id="TransactionDate" dataType="DATE" prompt="Transaction Date" viewName="TransactionSearchVO1" viewAttr="Transactiondate" rendered="false"/>
+                        <oa:messageStyledText id="RequisitionNumber" dataType="VARCHAR2" prompt="Requisition Number" viewName="TransactionSearchVO1" viewAttr="Requisitionnumber" maximumLength="100"/>
+                        <oa:messageStyledText id="RequisitionType" dataType="VARCHAR2" prompt="Requisition Type" viewName="TransactionSearchVO1" viewAttr="Requisitiontype" maximumLength="50"/>
+                        <oa:messageStyledText id="RequisitionStatus" prompt="Requisition Status" viewName="TransactionSearchVO1" viewAttr="Requisitionstatus"/>
+                        <oa:messageStyledText id="EmployeeNumber" dataType="VARCHAR2" prompt="Employee Number" viewName="TransactionSearchVO1" viewAttr="Employeenumber" maximumLength="30"/>
+                        <oa:messageStyledText id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="TransactionSearchVO1" viewAttr="Uniformsetname" maximumLength="100"/>
+                        <oa:messageStyledText id="UniformReturnType" prompt="Return Type" viewName="TransactionSearchVO1" viewAttr="Returntype" maximumLength="80"/>
+                        <oa:image id="TransactionDetails" destination="OA.jsp?page=/oracle/apps/xbol/v2/employee/webui/TransactionSummaryPG&amp;retainAM=Y&amp;TrHId={@Transactionheaderid }" prompt="Transaction Details" source="detailsicon_enabled.gif"/>
+                     </ui:contents>
+                  </oa:table>
+               </ui:contents>
+               <oa:simpleSearchPanel>
+                  <oa:header text="Transaction Search" id="region7">
+                     <ui:contents>
+                        <oa:defaultDoubleColumn id="HeaderRN" headerDisabled="true">
+                           <ui:contents>
+                              <oa:messageLovInput id="TransactionNumberHeadItem" dataType="VARCHAR2" prompt="Transaction Number" maximumLength="100">
+                                 <lovContents>
+                                    <oa:listOfValues id="TransactionNumberLovRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                                       <ui:contents>
+                                          <oa:table name="TransactionNumberLovRN" id="TransactionNumberVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="TransactionNumberLOVItem" dataType="VARCHAR2" prompt="Transaction Number" viewName="TransactionNumberLovVO1" viewAttr="TransactionNumber" maximumLength="100" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap1" lovItem="TransactionNumberLOVItem" resultTo="TransactionNumberHeadItem" criteriaFrom="TransactionNumberHeadItem"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="RequisitionNumberHeadItem" dataType="VARCHAR2" prompt="Requisition Number" maximumLength="100">
+                                 <lovContents>
+                                    <oa:listOfValues id="region3" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                                       <ui:contents>
+                                          <oa:table name="region3" id="RequisitionNumberLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="RequisitionNumberLOVItem" dataType="VARCHAR2" prompt="Requisition Number" viewName="TrxSearchRequisitionNumberLovVO1" viewAttr="RequisitionNumber" maximumLength="100" queryable="true"/>
+                                                <oa:messageStyledText id="RequisitionTypeLOVItem" viewName="TrxSearchRequisitionNumberLovVO1" viewAttr="RequisitionType" prompt="Requisition Status" rendered="false"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap3" lovItem="RequisitionNumberLOVItem" resultTo="RequisitionNumberHeadItem" criteriaFrom="RequisitionNumberHeadItem"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="RequisitionTypeHeadItem" dataType="VARCHAR2" prompt="Requisition Type" maximumLength="50">
+                                 <lovContents>
+                                    <oa:listOfValues id="region4" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                                       <ui:contents>
+                                          <oa:table name="region4" id="RequisitionTypeLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="RequisitionType1" dataType="VARCHAR2" prompt="Requisition Type" viewName="TrxSearchRequisitionTypeLovVO1" viewAttr="Requisitiontype" maximumLength="50" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap4" lovItem="RequisitionType1" resultTo="RequisitionTypeHeadItem" criteriaFrom="RequisitionTypeHeadItem"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="UniformSetNameHeadItem" dataType="VARCHAR2" prompt="Uniform Set Name" maximumLength="100" queryable="true">
+                                 <lovContents>
+                                    <oa:listOfValues id="UniformSetNameLovRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                                       <ui:contents>
+                                          <oa:table name="UniformSetNameLovRN" id="UniformSetNameLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="UniformSetName1" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="UniformSetNameLovVO1" viewAttr="UniformSetName" maximumLength="100" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap6" lovItem="UniformSetName1" resultTo="UniformSetNameHeadItem" criteriaFrom="UniformSetNameHeadItem"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageTextInput id="TransactionFromDateHeadItem" dataType="DATE" prompt="Transaction From Date"/>
+                              <oa:messageTextInput id="TransactionToDateHeadItem" dataType="DATE" prompt="Transaction To Date"/>
+                              <oa:messageLovInput id="EmployeeNumberHeadItem" dataType="VARCHAR2" prompt="Employee Number" maximumLength="30">
+                                 <lovContents>
+                                    <oa:listOfValues id="EmployeeNumberLovRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                                       <ui:contents>
+                                          <oa:table name="EmployeeNumberLovRN" id="EmployeeIdLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="EmployeeNumber1" dataType="VARCHAR2" prompt="Employee Number" viewName="EmployeeIdLovVO1" viewAttr="EmployeeNumber" maximumLength="30" queryable="true"/>
+                                                <oa:formValue id="personidformvalue" viewName="EmployeeIdLovVO1" viewAttr="PersonId" dataType="NUMBER"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap5" lovItem="EmployeeNumber1" resultTo="EmployeeNumberHeadItem" criteriaFrom="EmployeeNumberHeadItem"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="TransactionStatusHeadItem" dataType="VARCHAR2" prompt="Transaction Status" maximumLength="50" rendered="false">
+                                 <lovContents>
+                                    <oa:listOfValues id="transactionStatusLovRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                                       <ui:contents>
+                                          <oa:table name="transactionStatusLovRN" id="TransactionStatusLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="TransactionStatusStatusLOVItem" dataType="VARCHAR2" prompt="Transaction Status" viewName="TransactionStatusLovVO1" viewAttr="TransactionStatus" maximumLength="50" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap2" lovItem="TransactionStatusStatusLOVItem" resultTo="TransactionStatusHeadItem" criteriaFrom="TransactionStatusHeadItem"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:submitButton id="SearchButtonItem" text="Search" prompt="Search"/>
+                              <oa:button id="ClearButtonItem" text="Clear" prompt="Clear" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/TransactionSearchPG"/>
+                           </ui:contents>
+                        </oa:defaultDoubleColumn>
+                     </ui:contents>
+                  </oa:header>
+               </oa:simpleSearchPanel>
+            </oa:query>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

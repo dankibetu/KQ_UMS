@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="AirxpAM"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.AirxpAMImpl"
+   LoadComponentsLazily="true" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="RequisitionSummaryLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSummaryLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionSearchVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSearchVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionHeaderIssueVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionHeaderIssueVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionHeaderReturnVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionHeaderReturnVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="tryVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.tryVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="SourceTransactionReturnLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.SourceTransactionReturnLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ButtonVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.ButtonVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="SourceTransactionIssueLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.SourceTransactionIssueLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionLineIssueVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionLineIssueVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ReturnTrialVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.ReturnTrialVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionReturnLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionReturnLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="IssueTrialVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.IssueTrialVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionReturnTransientVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionReturnTransientVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionIssueTransientVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionIssueTransientVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="MultiSelectionTransactionIssueLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.MultiSelectionTransactionIssueLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionSummaryHeaderVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSummaryHeaderVO" >
+   </ViewUsage>
+</AppModule>

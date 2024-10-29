@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="RequisitionLOVAM"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLOVAMImpl"
+   LoadComponentsLazily="true" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="RequisitionNumberLOVVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionNumberLOVVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionTypePoplistVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.poplist.server.RequisitionTypePoplistVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ItemCodeLineLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.ItemCodeLineLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ItemLinesIssuesLOVVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.ItemLinesIssuesLOVVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="HeaderReasonCodePoplistVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.poplist.server.HeaderReasonCodePoplistVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="ReasonCodePoplistVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.poplist.server.ReasonCodePoplistVO" >
+   </ViewUsage>
+</AppModule>

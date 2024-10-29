@@ -1,0 +1,361 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="NewTransactionLineIssueVO"
+   SelectList="TransactionLineIssueEO.TRANSACTION_ID, 
+       TransactionLineIssueEO.TRANSACTION_HEADER_ID, 
+       TransactionLineIssueEO.REQUISITION_LINE_ID, 
+       TransactionLineIssueEO.TRANSACTION_LINE_NUMBER, 
+       TransactionLineIssueEO.UNIFORM_SET_LINE_ID, 
+       TransactionLineIssueEO.TRANSACTION_DATE, 
+       TransactionLineIssueEO.TRANSACTION_QTY, 
+       TransactionLineIssueEO.INVENTORY_ITEM_ID, 
+       TransactionLineIssueEO.CATEGORY_ID, 
+       TransactionLineIssueEO.LOCATOR_ID, 
+       TransactionLineIssueEO.SUBINVENTORY, 
+       TransactionLineIssueEO.ORGANIZATION_ID, 
+       TransactionLineIssueEO.CHARGED_QTY, 
+       TransactionLineIssueEO.UNIT_PRICE, 
+       TransactionLineIssueEO.AMOUNT_CHARGED, 
+       TransactionLineIssueEO.TRANSACTION_REASON_CODE, 
+       TransactionLineIssueEO.LINE_STATUS, 
+       TransactionLineIssueEO.REMARKS, 
+       TransactionLineIssueEO.PARENT_TRANSACTION_ID, 
+       TransactionLineIssueEO.CREATED_BY, 
+       TransactionLineIssueEO.CREATION_DATE, 
+       TransactionLineIssueEO.LAST_UPDATED_BY, 
+       TransactionLineIssueEO.LAST_UPDATE_DATE, 
+       TransactionLineIssueEO.LAST_UPDATE_LOGIN, 
+       TransactionLineIssueEO.ATTRIBUTE1, 
+       TransactionLineIssueEO.ATTRIBUTE2, 
+       TransactionLineIssueEO.ATTRIBUTE3, 
+       TransactionLineIssueEO.ATTRIBUTE4, 
+       TransactionLineIssueEO.ATTRIBUTE5, 
+       TransactionLineIssueEO.ATTRIBUTE6, 
+       TransactionLineIssueEO.ATTRIBUTE7, 
+       TransactionLineIssueEO.ATTRIBUTE8, 
+       TransactionLineIssueEO.ATTRIBUTE9, 
+       TransactionLineIssueEO.ATTRIBUTE10, 
+       TransactionLineIssueEO.ATTRIBUTE11, 
+       TransactionLineIssueEO.ATTRIBUTE12, 
+       TransactionLineIssueEO.ATTRIBUTE13, 
+       TransactionLineIssueEO.ATTRIBUTE14, 
+       TransactionLineIssueEO.ATTRIBUTE15, 
+       TransactionLineIssueEO.ATTRIBUTE16, 
+       TransactionLineIssueEO.ATTRIBUTE17, 
+       TransactionLineIssueEO.ATTRIBUTE18, 
+       TransactionLineIssueEO.ATTRIBUTE19, 
+       TransactionLineIssueEO.ATTRIBUTE20, 
+       TransactionLineIssueEO.DAMAGED_QTY, 
+       TransactionLineIssueEO.ROWID"
+   FromList="APPS.XX_UMS_TRANSACTION_LINE_V2 TransactionLineIssueEO"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.NewTransactionLineIssueVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.NewTransactionLineIssueVOImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="TransactionLineIssueEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.schema.server.NewTransactionLineIssueEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="TransactionId"
+      IsNotNull="true"
+      EntityAttrName="TransactionId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TRANSACTION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionHeaderId"
+      IsNotNull="true"
+      EntityAttrName="TransactionHeaderId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TRANSACTION_HEADER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionLineId"
+      EntityAttrName="RequisitionLineId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="REQUISITION_LINE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionLineNumber"
+      IsNotNull="true"
+      EntityAttrName="TransactionLineNumber"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TRANSACTION_LINE_NUMBER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetLineId"
+      EntityAttrName="UniformSetLineId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="UNIFORM_SET_LINE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionDate"
+      IsNotNull="true"
+      EntityAttrName="TransactionDate"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TRANSACTION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionQty"
+      IsNotNull="true"
+      EntityAttrName="TransactionQty"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TRANSACTION_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="InventoryItemId"
+      IsNotNull="true"
+      EntityAttrName="InventoryItemId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="INVENTORY_ITEM_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CategoryId"
+      IsNotNull="true"
+      EntityAttrName="CategoryId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="CATEGORY_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LocatorId"
+      IsNotNull="true"
+      EntityAttrName="LocatorId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="LOCATOR_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Subinventory"
+      IsNotNull="true"
+      EntityAttrName="Subinventory"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="SUBINVENTORY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationId"
+      IsNotNull="true"
+      EntityAttrName="OrganizationId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ORGANIZATION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ChargedQty"
+      EntityAttrName="ChargedQty"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="CHARGED_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UnitPrice"
+      EntityAttrName="UnitPrice"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="UNIT_PRICE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AmountCharged"
+      EntityAttrName="AmountCharged"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="AMOUNT_CHARGED" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionReasonCode"
+      EntityAttrName="TransactionReasonCode"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TRANSACTION_REASON_CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LineStatus"
+      EntityAttrName="LineStatus"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="LINE_STATUS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      EntityAttrName="Remarks"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="REMARKS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ParentTransactionId"
+      EntityAttrName="ParentTransactionId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="PARENT_TRANSACTION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      IsNotNull="true"
+      EntityAttrName="CreatedBy"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="CREATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      IsNotNull="true"
+      EntityAttrName="CreationDate"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      IsNotNull="true"
+      EntityAttrName="LastUpdatedBy"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="LAST_UPDATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      IsNotNull="true"
+      EntityAttrName="LastUpdateDate"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="LAST_UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      EntityAttrName="LastUpdateLogin"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="LAST_UPDATE_LOGIN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute1"
+      EntityAttrName="Attribute1"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute2"
+      EntityAttrName="Attribute2"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute3"
+      EntityAttrName="Attribute3"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE3" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute4"
+      EntityAttrName="Attribute4"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE4" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute5"
+      EntityAttrName="Attribute5"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE5" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute6"
+      EntityAttrName="Attribute6"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE6" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute7"
+      EntityAttrName="Attribute7"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE7" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute8"
+      EntityAttrName="Attribute8"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE8" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute9"
+      EntityAttrName="Attribute9"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE9" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute10"
+      EntityAttrName="Attribute10"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE10" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute11"
+      EntityAttrName="Attribute11"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE11" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute12"
+      EntityAttrName="Attribute12"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE12" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute13"
+      EntityAttrName="Attribute13"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE13" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute14"
+      EntityAttrName="Attribute14"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE14" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute15"
+      EntityAttrName="Attribute15"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE15" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute16"
+      EntityAttrName="Attribute16"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE16" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute17"
+      EntityAttrName="Attribute17"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE17" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute18"
+      EntityAttrName="Attribute18"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE18" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute19"
+      EntityAttrName="Attribute19"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE19" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute20"
+      EntityAttrName="Attribute20"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ATTRIBUTE20" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DamagedQty"
+      EntityAttrName="DamagedQty"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="DAMAGED_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RowID"
+      IsUpdateable="false"
+      EntityAttrName="RowID"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ROWID" >
+   </ViewAttribute>
+</ViewObject>

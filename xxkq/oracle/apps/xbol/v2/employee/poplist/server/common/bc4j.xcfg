@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="AirxpPoplistAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>AIRXP</JDBCName>
+         <jbo.project>Airxp</jbo.project>
+         <AppModuleJndiName>oracle.apps.xbol.v2.employee.poplist.server.AirxpPoplistAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.xbol.v2.employee.poplist.server.AirxpPoplistAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="AirxpPoplistAMLocal1">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>KQUAT</JDBCName>
+         <AppModuleJndiName>xxkq.oracle.apps.xbol.v2.employee.poplist.server.AirxpPoplistAM</AppModuleJndiName>
+         <ApplicationName>xxkq.oracle.apps.xbol.v2.employee.poplist.server.AirxpPoplistAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="KQUAT">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="10.2.131.193"/>
+      <ENTRY name="user" value="APPS"/>
+      <ENTRY name="ConnectionName" value="KQUAT"/>
+      <ENTRY name="ServiceName" value="PRDCLN"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}052F5FD50616BF26F36E4B3AD95181F6B30922D45FF4CE0B57]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

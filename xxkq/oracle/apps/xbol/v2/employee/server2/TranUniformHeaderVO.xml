@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="TranUniformHeaderVO"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.TranUniformHeaderVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.TranUniformHeaderVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT papf.employee_number,
+       papf.full_name,
+       xueh.uniform_set_name,
+       xueh.UNIFORM_SET_ID,
+       papf.person_id as pid 
+FROM   per_all_people_f papf,
+       per_all_assignments_f paaf,
+       xx_ums_entitlement_header_v2 xueh
+WHERE  papf.person_id = paaf.person_id
+AND    papf.business_group_id = paaf.business_group_id
+AND    papf.business_group_id = fnd_profile.value('PER_BUSINESS_GROUP_ID')
+AND    trunc(sysdate) between TRUNC(papf.effective_start_date) and TRUNC(papf.effective_end_date)
+AND    trunc(sysdate) between TRUNC(paaf.effective_start_date) and TRUNC(paaf.effective_end_date)
+AND    paaf.assignment_id = (SELECT MAX(assignment_id) FROM PER_ALL_ASSIGNMENTS_F paaf1
+                                  WHERE paaf1.person_id = paaf.person_id
+AND paaf1.primary_flag='Y'
+AND paaf1.assignment_type <> 'A'                                  
+AND   paaf1.business_group_id = paaf.business_group_id)
+AND    paaf.position_id = xueh.position_id
+AND    decode(fnd_profile.value('XX_UMS_LOCATION_REQUIRED'),'N',1,paaf.location_id) = decode(fnd_profile.value('XX_UMS_LOCATION_REQUIRED'),'N',1,xueh.location_id)
+AND    papf.sex = xueh.gender
+AND    employee_number = :1
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <ViewAttribute
+      Name="EmployeeNumber"
+      IsPersistent="false"
+      Precision="30"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="EMPLOYEE_NUMBER"
+      Expression="EMPLOYEE_NUMBER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="FullName"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="FULL_NAME"
+      Expression="FULL_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetName"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="100"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="UNIFORM_SET_NAME"
+      Expression="UNIFORM_SET_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="UNIFORM_SET_ID"
+      Expression="UNIFORM_SET_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Pid"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="10"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="PID"
+      Expression="PID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

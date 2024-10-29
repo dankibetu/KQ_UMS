@@ -1,0 +1,68 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupAM" windowTitle="Entitlement Search Page" title="">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:query id="QueryRN" mode="autoCustomizationCriteria" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.EntitlementSearchCO" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupAM">
+               <ui:contents>
+                  <oa:table id="EntitlementSearchVO1" width="100%" text="Entitlement Search Details" blockSize="100">
+                     <ui:contents>
+                        <oa:messageStyledText id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="EntitlementSearchVO1" viewAttr="UniformSetName" maximumLength="100" queryable="true"/>
+                        <oa:messageStyledText id="BusinessGroupId" dataType="VARCHAR2" prompt="Business Group Name" viewName="EntitlementSearchVO1" viewAttr="BusinessGroupName"/>
+                        <oa:messageStyledText id="PositionId" dataType="VARCHAR2" prompt="Position" viewName="EntitlementSearchVO1" viewAttr="PositionName"/>
+                        <oa:messageStyledText id="Gender" dataType="VARCHAR2" prompt="Gender" viewName="EntitlementSearchVO1" viewAttr="Gender" maximumLength="1"/>
+                        <oa:messageStyledText id="Version" dataType="NUMBER" prompt="Version" viewName="EntitlementSearchVO1" viewAttr="Version"/>
+                        <oa:messageStyledText id="LocationId" dataType="VARCHAR2" prompt="Location" viewName="EntitlementSearchVO1" viewAttr="LocationCode" rendered="false"/>
+                        <oa:messageStyledText id="UniformSetId" dataType="NUMBER" prompt="Uniform Set Id" viewName="EntitlementSearchVO1" viewAttr="UniformSetId" rendered="false"/>
+                        <oa:messageStyledText id="PreparerName" dataType="VARCHAR2" prompt="Preparer Name" viewName="EntitlementSearchVO1" viewAttr="PreparerName" maximumLength="200"/>
+                        <oa:messageStyledText id="Status" dataType="VARCHAR2" prompt="Status" viewName="EntitlementSearchVO1" viewAttr="Status" maximumLength="100"/>
+                        <oa:messageStyledText id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="EntitlementSearchVO1" viewAttr="Remarks" maximumLength="1999"/>
+                        <oa:messageStyledText id="StartDate" viewName="EntitlementSearchVO1" viewAttr="StartDate" prompt="Start Date"/>
+                        <oa:messageStyledText id="EndDate" viewName="EntitlementSearchVO1" viewAttr="EndDate" prompt="End Date"/>
+                        <oa:image id="EntitlementDetails" source="detailsicon_enabled.gif" prompt="Entitlement Details" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/EntitlementSetupPG&amp;retainAM=Y&amp;UniformSetId={@UniformSetId}"/>
+                     </ui:contents>
+                  </oa:table>
+               </ui:contents>
+               <oa:simpleSearchPanel>
+                  <oa:header text="Entitlement Search" id="SearchHeaderRN" rendered="true">
+                     <ui:contents>
+                        <oa:defaultDoubleColumn id="SearchHeader1RN" headerDisabled="true">
+                           <ui:contents>
+                              <oa:messageLovInput id="UniformSetNameLOV" dataType="VARCHAR2" prompt="Uniform Set Name" maximumLength="100" queryable="true">
+                                 <lovContents>
+                                    <oa:listOfValues id="UniformSetNameLOVRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                                       <ui:contents>
+                                          <oa:table name="UniformSetNameLOVRN" id="UniformSetNameLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="UniformSetNameInLov" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="EntitlementUniformSetNameLovVO1" viewAttr="UniformSetName" maximumLength="100" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap1" lovItem="UniformSetNameInLov" resultTo="UniformSetNameLOV" criteriaFrom="UniformSetNameLOV"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                           </ui:contents>
+                        </oa:defaultDoubleColumn>
+                     </ui:contents>
+                  </oa:header>
+               </oa:simpleSearchPanel>
+               <oa:simpleSearchMappings>
+                  <oa:queryCriteriaMap id="queryCriteriaMap1" criteriaItem="UniformSetNameLOV" resultsItem="UniformSetName"/>
+               </oa:simpleSearchMappings>
+            </oa:query>
+            <oa:pageButtonBar id="PageButtonBarRN">
+               <ui:contents>
+                  <oa:button id="CreateButton" text="Create New Entitlement Setup" prompt="Create New Entitlement Setup" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/EntitlementSetupPG"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

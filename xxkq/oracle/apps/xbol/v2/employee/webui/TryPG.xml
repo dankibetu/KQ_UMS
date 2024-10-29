@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PagelayoutRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.AirxpAM" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.TryCO" windowTitle="Testing Page" title="Page for Inserting Data Into DataBase">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:messageComponentLayout id="tryVO1">
+               <ui:contents>
+                  <oa:messageTextInput id="TransactionHeaderId" dataType="NUMBER" prompt="TransactionHeaderId" viewName="tryVO1" viewAttr="TransactionHeaderId"/>
+                  <oa:messageTextInput id="RequisitionHeaderId" dataType="NUMBER" prompt="RequisitionHeaderId" viewName="tryVO1" viewAttr="RequisitionHeaderId"/>
+                  <oa:messageTextInput id="TransactionNumber" dataType="VARCHAR2" prompt="TransactionNumber" viewName="tryVO1" viewAttr="TransactionNumber" maximumLength="100"/>
+                  <oa:messageTextInput id="TransactionStatus" dataType="VARCHAR2" prompt="TransactionStatus" viewName="tryVO1" viewAttr="TransactionStatus" maximumLength="50"/>
+                  <oa:messageTextInput id="TransactionType" dataType="VARCHAR2" prompt="TransactionType" viewName="tryVO1" viewAttr="TransactionType" maximumLength="50"/>
+                  <oa:messageTextInput id="TransactionDate" dataType="DATE" prompt="TransactionDate" viewName="tryVO1" viewAttr="TransactionDate"/>
+                  <oa:messageTextInput id="UniformSetId" dataType="NUMBER" prompt="UniformSetId" viewName="tryVO1" viewAttr="UniformSetId"/>
+                  <oa:messageTextInput id="ReturnType" dataType="VARCHAR2" prompt="ReturnType" viewName="tryVO1" viewAttr="ReturnType" maximumLength="25"/>
+                  <oa:messageTextInput id="PersonId" dataType="NUMBER" prompt="PersonId" viewName="tryVO1" viewAttr="PersonId"/>
+                  <oa:messageTextInput id="BusinessGroupId" dataType="NUMBER" prompt="BusinessGroupId" viewName="tryVO1" viewAttr="BusinessGroupId"/>
+                  <oa:messageTextInput id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="tryVO1" viewAttr="Remarks" maximumLength="2000"/>
+               </ui:contents>
+            </oa:messageComponentLayout>
+            <oa:pageButtonBar id="BNuttonBar">
+               <ui:contents>
+                  <oa:button id="Cls" text="Cls" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/TryPG" prompt="Cls"/>
+                  <oa:submitButton id="submitbutton" text="insert button" prompt="insert button"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

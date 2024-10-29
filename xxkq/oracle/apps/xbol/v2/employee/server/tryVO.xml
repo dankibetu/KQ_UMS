@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="tryVO"
+   SelectList="TransactionHeaderIssueEO.TRANSACTION_HEADER_ID, 
+       TransactionHeaderIssueEO.REQUISITION_HEADER_ID, 
+       TransactionHeaderIssueEO.TRANSACTION_NUMBER, 
+       TransactionHeaderIssueEO.TRANSACTION_STATUS, 
+       TransactionHeaderIssueEO.TRANSACTION_TYPE, 
+       TransactionHeaderIssueEO.TRANSACTION_DATE, 
+       TransactionHeaderIssueEO.UNIFORM_SET_ID, 
+       TransactionHeaderIssueEO.ROWID, 
+       TransactionHeaderIssueEO.RETURN_TYPE, 
+       TransactionHeaderIssueEO.PERSON_ID, 
+       TransactionHeaderIssueEO.BUSINESS_GROUP_ID, 
+       TransactionHeaderIssueEO.REMARKS"
+   FromList="APPS.XX_UMS_TRANSACTION_HEADER_V2 TransactionHeaderIssueEO"
+   BindingStyle="Oracle"
+   CustomQuery="false"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.tryVOImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="TransactionHeaderIssueEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.sechma.server.TransactionHeaderIssueEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="TransactionHeaderId"
+      IsNotNull="true"
+      EntityAttrName="TransactionHeaderId"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="TRANSACTION_HEADER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionHeaderId"
+      EntityAttrName="RequisitionHeaderId"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="REQUISITION_HEADER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionNumber"
+      EntityAttrName="TransactionNumber"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="TRANSACTION_NUMBER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionStatus"
+      EntityAttrName="TransactionStatus"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="TRANSACTION_STATUS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionType"
+      EntityAttrName="TransactionType"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="TRANSACTION_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionDate"
+      EntityAttrName="TransactionDate"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="TRANSACTION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetId"
+      EntityAttrName="UniformSetId"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="UNIFORM_SET_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RowID"
+      IsUpdateable="false"
+      EntityAttrName="RowID"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="ROWID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReturnType"
+      EntityAttrName="ReturnType"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="RETURN_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PersonId"
+      EntityAttrName="PersonId"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="PERSON_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BusinessGroupId"
+      EntityAttrName="BusinessGroupId"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="BUSINESS_GROUP_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      EntityAttrName="Remarks"
+      EntityUsage="TransactionHeaderIssueEO"
+      AliasName="REMARKS" >
+   </ViewAttribute>
+</ViewObject>

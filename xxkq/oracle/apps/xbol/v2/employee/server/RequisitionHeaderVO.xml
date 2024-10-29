@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="RequisitionHeaderVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionHeaderVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionHeaderVOImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT RequisitionHeaderEO.UNIFORM_SET_ID, 
+       RequisitionHeaderEO.PERSON_ID AS EMPLOYEE_ID, 
+       RequisitionHeaderEO.BUSINESS_GROUP_ID, 
+       RequisitionHeaderEO.PREPARER_PERSON_ID, 
+       RequisitionHeaderEO.REQUISITION_CREATION_DATE, 
+       RequisitionHeaderEO.REQUISITION_STATUS, 
+       RequisitionHeaderEO.REQUISITION_TYPE, 
+       RequisitionHeaderEO.REQUISITION_NUMBER, 
+       RequisitionHeaderEO.REQUISITION_HEADER_ID, 
+       RequisitionHeaderEO.REMARKS, 
+       RequisitionHeaderEO.CONTACT_NUMBER, 
+       RequisitionHeaderEO.CREATED_BY, 
+       RequisitionHeaderEO.CREATION_DATE, 
+       RequisitionHeaderEO.LAST_UPDATED_BY, 
+       RequisitionHeaderEO.LAST_UPDATE_DATE, 
+       RequisitionHeaderEO.LAST_UPDATE_LOGIN, 
+       RequisitionHeaderEO.REASON_CODE,
+       papf.Full_NAME AS employee_name,
+       xueh.uniform_set_name, 
+       papf.full_name as preparer ,
+       'Change Me' as Approver
+FROM XX_UMS_REQUISITION_HEADER_V2 RequisitionHeaderEO
+, per_all_people_f papf
+, xx_ums_entitlement_header_v2 xueh
+where RequisitionHeaderEO.PERSON_ID = papf.person_id
+and trunc(sysdate) between papf.effective_start_date and papf.effective_end_date
+and RequisitionHeaderEO.uniform_Set_id = xueh.uniform_set_id
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="RequisitionHeaderEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="UniformSetId"
+      EntityAttrName="UniformSetId"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="UNIFORM_SET_ID" >
+   </ViewAttribute>
+  <ViewAttribute
+      Name="PersonId"
+      EntityAttrName="PersonId"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="PersonId"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EmployeeId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="EMPLOYEE_ID"
+      Expression="EMPLOYEE_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BusinessGroupId"
+      EntityAttrName="BusinessGroupId"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="BUSINESS_GROUP_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PreparerPersonId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="PREPARER_PERSON_ID"
+      Expression="PREPARER_PERSON_ID"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionCreationDate"
+      EntityAttrName="RequisitionCreationDate"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="REQUISITION_CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionStatus"
+      EntityAttrName="RequisitionStatus"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="REQUISITION_STATUS" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionType"
+      EntityAttrName="RequisitionType"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="REQUISITION_TYPE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionNumber"
+      EntityAttrName="RequisitionNumber"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="REQUISITION_NUMBER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionHeaderId"
+      EntityAttrName="RequisitionHeaderId"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="REQUISITION_HEADER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      EntityAttrName="Remarks"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="Remarks" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ContactNumber"
+      EntityAttrName="ContactNumber"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="CONTACT_NUMBER" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="CREATED_BY"
+      Expression="CREATED_BY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      AliasName="CREATION_DATE"
+      Expression="CREATION_DATE"
+      SQLType="DATE" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="LAST_UPDATED_BY"
+      Expression="LAST_UPDATED_BY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      AliasName="LAST_UPDATE_DATE"
+      Expression="LAST_UPDATE_DATE"
+      SQLType="DATE" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="LAST_UPDATE_LOGIN"
+      Expression="LAST_UPDATE_LOGIN"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReasonCode"
+      EntityAttrName="ReasonCode"
+      EntityUsage="RequisitionHeaderEO"
+      AliasName="REASON_CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EmployeeName"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="EMPLOYEE_NAME"
+      Expression="EMPLOYEE_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetName"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="100"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="UNIFORM_SET_NAME"
+      Expression="UNIFORM_SET_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Preparer"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PREPARER"
+      Expression="PREPARER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Approver"
+      IsPersistent="false"
+      Precision="9"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="APPROVER"
+      Expression="APPROVER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="9" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

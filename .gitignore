@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# Allow tracking of the xxkq directory and its contents
+!xxkq/
+!xxkq/**

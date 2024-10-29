@@ -1,0 +1,789 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="RequisitionLineEO"
+   DBObjectType="table"
+   DBObjectName="APPS.XX_UMS_REQUISITION_LINE_V2"
+   AliasName="RequisitionLineEO"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEOImpl"
+   DefClass="oracle.apps.fnd.framework.server.OAEntityDefImpl"
+   CollClass="oracle.apps.fnd.framework.server.OAEntityCache" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Init|Access" />
+   </DesignTime>
+   <Attribute
+      Name="RequisitionHeaderId"
+      ColumnName="REQUISITION_HEADER_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequisitionLineId"
+      IsNotNull="true"
+      ColumnName="REQUISITION_LINE_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LineNumber"
+      ColumnName="LINE_NUMBER"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="UniformSetLineId"
+      ColumnName="UNIFORM_SET_LINE_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="InventoryItemId"
+      ColumnName="INVENTORY_ITEM_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="OrganizationId"
+      ColumnName="ORGANIZATION_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequestedQty"
+      ColumnName="REQUESTED_QTY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="DamageQty"
+      ColumnName="DAMAGE_QTY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ChargableQty"
+      ColumnName="CHARGABLE_QTY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="NeedByDate"
+      ColumnName="NEED_BY_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReasonCode"
+      Precision="20"
+      ColumnName="REASON_CODE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Remarks"
+      Precision="1999"
+      ColumnName="REMARKS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="1999" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Status"
+      Precision="10"
+      ColumnName="STATUS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="10" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReplacementItemId"
+      ColumnName="RETURN_ITEM_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReplacementOrganizationId"
+      ColumnName="RETURN_ORGANIZATION_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="TotalIssuedQty"
+      ColumnName="TOTAL_ISSUED_QTY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReturnedQty"
+      ColumnName="RETURNED_QTY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreatedBy"
+      IsNotNull="true"
+      ColumnName="CREATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreationDate"
+      IsNotNull="true"
+      ColumnName="CREATION_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdatedBy"
+      IsNotNull="true"
+      ColumnName="LAST_UPDATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateDate"
+      IsNotNull="true"
+      ColumnName="LAST_UPDATE_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateLogin"
+      IsNotNull="true"
+      ColumnName="LAST_UPDATE_LOGIN"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute1"
+      Precision="150"
+      ColumnName="ATTRIBUTE1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute2"
+      Precision="100"
+      ColumnName="ATTRIBUTE2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute3"
+      Precision="100"
+      ColumnName="ATTRIBUTE3"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute4"
+      Precision="100"
+      ColumnName="ATTRIBUTE4"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute5"
+      Precision="100"
+      ColumnName="ATTRIBUTE5"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute6"
+      Precision="100"
+      ColumnName="ATTRIBUTE6"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute7"
+      Precision="100"
+      ColumnName="ATTRIBUTE7"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute8"
+      Precision="100"
+      ColumnName="ATTRIBUTE8"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute9"
+      Precision="100"
+      ColumnName="ATTRIBUTE9"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute10"
+      Precision="100"
+      ColumnName="ATTRIBUTE10"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute11"
+      Precision="100"
+      ColumnName="ATTRIBUTE11"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute12"
+      Precision="100"
+      ColumnName="ATTRIBUTE12"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute13"
+      Precision="100"
+      ColumnName="ATTRIBUTE13"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute14"
+      Precision="100"
+      ColumnName="ATTRIBUTE14"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute15"
+      Precision="100"
+      ColumnName="ATTRIBUTE15"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute16"
+      Precision="100"
+      ColumnName="ATTRIBUTE16"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute17"
+      Precision="100"
+      ColumnName="ATTRIBUTE17"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute18"
+      Precision="100"
+      ColumnName="ATTRIBUTE18"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute19"
+      Precision="100"
+      ColumnName="ATTRIBUTE19"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute20"
+      Precision="100"
+      ColumnName="ATTRIBUTE20"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReplacementIssueStutus"
+      Precision="50"
+      ColumnName="REPLACEMENT_ISSUE_STUTUS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReplacementReceiptStatus"
+      Precision="50"
+      ColumnName="REPLACEMENT_RECEIPT_STATUS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_LINE_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <Key
+      Name="RequisitionlineeoPrimaryKey" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.RequisitionLineId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="REQUISITIONLINEEO_PRIMARY_KEY" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178894" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.RequisitionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_HEADER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178894" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178895" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.RequisitionLineId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_LINE_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178895" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178896" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LineNumber" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LINE_NUMBER&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178896" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178897" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.UniformSetLineId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;UNIFORM_SET_LINE_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178897" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178898" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.InventoryItemId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;INVENTORY_ITEM_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178898" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178899" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.OrganizationId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORGANIZATION_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178899" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178900" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.CreatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178900" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178901" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.CreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178901" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178902" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LastUpdatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178902" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178903" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LastUpdateDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178903" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178904" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LastUpdateLogin" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_LOGIN&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178904" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196859" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.RequisitionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_HEADER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196859" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196860" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.RequisitionLineId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_LINE_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196860" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196861" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LineNumber" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LINE_NUMBER&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196861" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196862" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.UniformSetLineId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;UNIFORM_SET_LINE_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196862" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196863" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.InventoryItemId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;INVENTORY_ITEM_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196863" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196864" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.OrganizationId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;ORGANIZATION_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196864" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196866" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.CreatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196866" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196867" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.CreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196867" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196868" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LastUpdatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196868" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196869" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LastUpdateDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196869" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196870" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO.LastUpdateLogin" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_LOGIN&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196870" />
+      </DesignTime>
+   </Key>
+</Entity>

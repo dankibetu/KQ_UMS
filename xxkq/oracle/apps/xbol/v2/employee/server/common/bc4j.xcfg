@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="AirxpAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>AIRXP</JDBCName>
+         <jbo.project>Airxp</jbo.project>
+         <AppModuleJndiName>oracle.apps.xbol.v2.employee.server.AirxpAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>oracle.apps.xbol.v2.employee.server.AirxpAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="AirxpAMLocal1">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>KQDEV</JDBCName>
+         <AppModuleJndiName>xxkq.oracle.apps.xbol.v2.employee.server.AirxpAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxkq.oracle.apps.xbol.v2.employee.server.AirxpAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="EntitlementSetupAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>KQDEV</JDBCName>
+         <AppModuleJndiName>xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="RequisitionAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>KQDEV</JDBCName>
+         <AppModuleJndiName>xxkq.oracle.apps.xbol.v2.employee.server.RequisitionAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxkq.oracle.apps.xbol.v2.employee.server.RequisitionAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="UniformReturnsAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>KQDEV</JDBCName>
+         <AppModuleJndiName>xxkq.oracle.apps.xbol.v2.employee.server.UniformReturnsAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxkq.oracle.apps.xbol.v2.employee.server.UniformReturnsAM</ApplicationName>
+      </AppModuleConfig>
+      <AppModuleConfig name="SearchAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>KQDEV</JDBCName>
+         <AppModuleJndiName>xxkq.oracle.apps.xbol.v2.employee.server.SearchAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxkq.oracle.apps.xbol.v2.employee.server.SearchAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="KQDEV">
+      <ENTRY name="JDBC_PORT" value="1521"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="10.2.131.193"/>
+      <ENTRY name="user" value="apps"/>
+      <ENTRY name="ConnectionName" value="KQDEV"/>
+      <ENTRY name="SID" value="DEVPRD"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05973983A7BD8A53372E0710A0EAD56C3AD396B617CE05E0F9]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

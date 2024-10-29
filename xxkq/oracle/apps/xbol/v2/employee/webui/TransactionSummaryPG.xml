@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.SearchAM" windowTitle="Transaction Summary Page" title="Transaction Summary" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.TransactionSummaryCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:labeledFieldLayout id="TransactionSummaryHeaderVO1" columns="4">
+               <ui:contents>
+                  <oa:messageStyledText id="RequisitionNumber" dataType="VARCHAR2" prompt="Requisition Number" viewName="TransactionSummaryHeaderVO1" viewAttr="Requisitionnumber" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="RequisitionType" dataType="VARCHAR2" prompt="Requisition Type" viewName="TransactionSummaryHeaderVO1" viewAttr="RequisitionType" maximumLength="50" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="RequisitionDate" dataType="DATE" prompt="Requisition Date" viewName="TransactionSummaryHeaderVO1" viewAttr="RequisitionDate" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="RequisitionStatus" dataType="VARCHAR2" prompt="Requisition Status" viewName="TransactionSummaryHeaderVO1" viewAttr="RequisitionStatus" maximumLength="250" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="EmployeeId" dataType="VARCHAR2" prompt="Employee Number" viewName="TransactionSummaryHeaderVO1" viewAttr="EmployeeId" maximumLength="30" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="EmployeeName" dataType="VARCHAR2" prompt="Employee Name" viewName="TransactionSummaryHeaderVO1" viewAttr="EmployeeName" maximumLength="240" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="TransactionSummaryHeaderVO1" viewAttr="UniformSetName" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="ApproverName" dataType="VARCHAR2" prompt="Approver Name" viewName="TransactionSummaryHeaderVO1" viewAttr="ApproverName" maximumLength="240" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="TransactionNumber" dataType="VARCHAR2" prompt="Transaction Number" viewName="TransactionSummaryHeaderVO1" viewAttr="Transactionnumber" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="TransactionStatus" dataType="VARCHAR2" prompt="Transaction Status" viewName="TransactionSummaryHeaderVO1" viewAttr="TransactionStatus" maximumLength="50" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="TransactionType" viewName="TransactionSummaryHeaderVO1" viewAttr="TransactionType" prompt="Transaction Type" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="TransactionDate" prompt="Transaction Date" viewName="TransactionSummaryHeaderVO1" viewAttr="Transactiondate" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="ContactNumber" dataType="VARCHAR2" prompt="Contact Number" viewName="TransactionSummaryHeaderVO1" viewAttr="ContactNumber" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="TransactionSummaryHeaderVO1" viewAttr="Remarks" maximumLength="1999" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="ReturnType" prompt="Return Type" viewName="TransactionSummaryHeaderVO1" viewAttr="ReturnType" styleClass="OraDataText"/>
+               </ui:contents>
+            </oa:labeledFieldLayout>
+            <oa:spacer id="SpacerItem" height="10"/>
+            <oa:table id="TransactionSummaryLineVO1" text="Line Details" width="100%" blockSize="100">
+               <ui:contents>
+                  <oa:messageStyledText id="TransactionLineNumber" dataType="NUMBER" prompt="Trx.Line. No." viewName="TransactionSummaryLineVO1" viewAttr="TransactionLineNumber" rendered="false"/>
+                  <oa:messageStyledText id="ItemCategory" dataType="VARCHAR2" prompt="Item Category" viewName="TransactionSummaryLineVO1" viewAttr="ItemCategory" maximumLength="122"/>
+                  <oa:messageStyledText id="ItemCode" dataType="VARCHAR2" prompt="Item Code" viewName="TransactionSummaryLineVO1" viewAttr="ItemCode" maximumLength="40"/>
+                  <oa:messageStyledText id="Description" dataType="VARCHAR2" prompt="Description" viewName="TransactionSummaryLineVO1" viewAttr="Description" maximumLength="240"/>
+                  <oa:messageStyledText id="PrimaryUnitOfMeasure" dataType="VARCHAR2" prompt="UOM" viewName="TransactionSummaryLineVO1" viewAttr="PrimaryUnitOfMeasure" maximumLength="25"/>
+                  <oa:messageStyledText id="RequestedQty" dataType="NUMBER" prompt="Requested Quantity" viewName="TransactionSummaryLineVO1" viewAttr="RequestedQty"/>
+                  <oa:messageStyledText id="TotalIssuedQty" dataType="NUMBER" prompt="Transaction Quantity" viewName="TransactionSummaryLineVO1" viewAttr="TransactionQty"/>
+                  <oa:messageStyledText id="Warehouse" dataType="VARCHAR2" prompt="Inventory Organization" viewName="TransactionSummaryLineVO1" viewAttr="Warehouse" maximumLength="240"/>
+                  <oa:messageStyledText id="SecondaryInventoryName" dataType="VARCHAR2" prompt="Sub Inventory" viewName="TransactionSummaryLineVO1" viewAttr="SubinventoryCode" maximumLength="10"/>
+                  <oa:messageStyledText id="LocatorName" dataType="VARCHAR2" prompt="Locator" viewName="TransactionSummaryLineVO1" viewAttr="LocatorName" maximumLength="40"/>
+                  <oa:messageStyledText id="TrxDate" viewName="TransactionSummaryLineVO1" viewAttr="Transactiondate" prompt="Transaction Date" dataType="DATE"/>
+                  <oa:messageStyledText id="RemarksItem" prompt="Remarks" viewName="TransactionSummaryLineVO1" viewAttr="Remarks"/>
+               </ui:contents>
+            </oa:table>
+            <oa:pageButtonBar id="PageButtonBarRN">
+               <ui:contents>
+                  <oa:button id="BackButton" text="Back" prompt="Back" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/TransactionSearchPG&amp;retainAM=Y"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

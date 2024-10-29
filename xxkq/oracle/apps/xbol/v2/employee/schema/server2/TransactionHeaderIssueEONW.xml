@@ -1,0 +1,632 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="TransactionHeaderIssueEO"
+   DBObjectType="table"
+   DBObjectName="APPS.XX_UMS_TRANSACTION_HEADER_V2"
+   AliasName="TransactionHeaderIssueEO"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="oracle.apps.fnd.framework.server.OAEntityImpl"
+   DefClass="oracle.apps.fnd.framework.server.OAEntityDefImpl"
+   CollClass="oracle.apps.fnd.framework.server.OAEntityCache" >
+   <DesignTime>
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Init|Val" />
+   </DesignTime>
+   <Attribute
+      Name="TransactionHeaderId"
+      ColumnName="TRANSACTION_HEADER_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequisitionHeaderId"
+      ColumnName="REQUISITION_HEADER_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="TransactionType"
+      Precision="50"
+      ColumnName="TRANSACTION_TYPE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReturnType"
+      Precision="25"
+      ColumnName="RETURN_TYPE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="TransactionNumber"
+      Precision="100"
+      ColumnName="TRANSACTION_NUMBER"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="TransactionStatus"
+      Precision="50"
+      ColumnName="TRANSACTION_STATUS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="TransactionDate"
+      ColumnName="TRANSACTION_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="UniformSetId"
+      ColumnName="UNIFORM_SET_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="PersonId"
+      ColumnName="PERSON_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="BusinessGroupId"
+      ColumnName="BUSINESS_GROUP_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Remarks"
+      Precision="2000"
+      ColumnName="REMARKS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2000" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreatedBy"
+      IsNotNull="true"
+      ColumnName="CREATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreationDate"
+      IsNotNull="true"
+      ColumnName="CREATION_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdatedBy"
+      IsNotNull="true"
+      ColumnName="LAST_UPDATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateDate"
+      IsNotNull="true"
+      ColumnName="LAST_UPDATE_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateLogin"
+      ColumnName="LAST_UPDATE_LOGIN"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute1"
+      Precision="100"
+      ColumnName="ATTRIBUTE1"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute2"
+      Precision="100"
+      ColumnName="ATTRIBUTE2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute3"
+      Precision="100"
+      ColumnName="ATTRIBUTE3"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute4"
+      Precision="100"
+      ColumnName="ATTRIBUTE4"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute5"
+      Precision="100"
+      ColumnName="ATTRIBUTE5"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute6"
+      Precision="100"
+      ColumnName="ATTRIBUTE6"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute7"
+      Precision="100"
+      ColumnName="ATTRIBUTE7"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute8"
+      Precision="100"
+      ColumnName="ATTRIBUTE8"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute9"
+      Precision="100"
+      ColumnName="ATTRIBUTE9"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute10"
+      Precision="100"
+      ColumnName="ATTRIBUTE10"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute11"
+      Precision="100"
+      ColumnName="ATTRIBUTE11"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute12"
+      Precision="100"
+      ColumnName="ATTRIBUTE12"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute13"
+      Precision="100"
+      ColumnName="ATTRIBUTE13"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute14"
+      Precision="100"
+      ColumnName="ATTRIBUTE14"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute15"
+      Precision="100"
+      ColumnName="ATTRIBUTE15"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute16"
+      Precision="100"
+      ColumnName="ATTRIBUTE16"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute17"
+      Precision="100"
+      ColumnName="ATTRIBUTE17"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute18"
+      Precision="100"
+      ColumnName="ATTRIBUTE18"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute19"
+      Precision="100"
+      ColumnName="ATTRIBUTE19"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Attribute20"
+      Precision="100"
+      ColumnName="ATTRIBUTE20"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_TRANSACTION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Key
+      Name="SysC001178905" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.TransactionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TRANSACTION_HEADER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178905" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178906" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.TransactionType" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TRANSACTION_TYPE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178906" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178907" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.TransactionNumber" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TRANSACTION_NUMBER&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178907" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178908" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.UniformSetId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;UNIFORM_SET_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178908" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178909" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.CreatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178909" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178910" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.CreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178910" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178911" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.LastUpdatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178911" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001178912" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.LastUpdateDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001178912" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196837" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.TransactionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TRANSACTION_HEADER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196837" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196838" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.TransactionType" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TRANSACTION_TYPE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196838" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196839" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.TransactionNumber" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;TRANSACTION_NUMBER&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196839" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196840" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.UniformSetId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;UNIFORM_SET_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196840" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196841" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.CreatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196841" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196842" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.CreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196842" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196843" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.LastUpdatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196843" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196844" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.LastUpdateDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196844" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="TransactionheaderissueeoPrimaryKey" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO.TransactionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="TRANSACTIONHEADERISSUEEO_PRIMA" />
+      </DesignTime>
+   </Key>
+</Entity>

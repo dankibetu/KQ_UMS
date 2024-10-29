@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="EntitlementSetUpApproverVO"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetUpApproverVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetUpApproverVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT papf.person_id as personid,
+       papf_sv.full_name Approver_Name
+FROM   PER_ALL_PEOPLE_F       PAPF,
+       PER_ALL_ASSIGNMENTS_F  PAAF,
+     --  HR_POSITIONS_F         HPF,
+     --  HR_ORGANIZATION_UNITS  HOU, 
+       PER_ALL_PEOPLE_F       PAPF_SV
+WHERE  papf.person_id=paaf.person_id   and
+       papf.business_group_id = paaf.business_group_id and
+       trunc(sysdate) between trunc(papf.effective_start_date) and trunc(nvl(papf.effective_end_date,sysdate+1)) and
+       trunc(sysdate) between trunc(paaf.effective_start_date) and trunc(nvl(paaf.effective_end_date,sysdate+1)) and
+       trunc(sysdate) between trunc(papf_sv.effective_start_date) and trunc(nvl(papf_sv.effective_end_date,sysdate+1)) and
+      -- paaf.position_id=hpf.position_id and 
+      -- paaf.organization_id=hou.organization_id and
+       paaf.primary_flag ='Y' and
+       paaf.assignment_type <> 'A'and
+       paaf.supervisor_id=papf_sv.person_id and 
+       paaf.business_group_id=papf_sv.business_group_id and 
+       trunc(sysdate) between trunc(papf_sv.effective_start_date) and trunc(nvl(papf_sv.effective_end_date,sysdate+1))and
+       papf.person_id = :1
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Personid"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="10"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="PERSONID"
+      Expression="PERSONID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ApproverName"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="APPROVER_NAME"
+      Expression="APPROVER_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

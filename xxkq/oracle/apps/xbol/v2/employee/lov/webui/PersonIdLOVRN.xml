@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<oa:listOfValues version="10.1.3_" xml:lang="en-US" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:ui="http://xmlns.oracle.com/uix/ui" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$" scope="/" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLOVAM" rendered="true">
+   <ui:contents>
+      <oa:table name="PersonIdLOVRN" id="RequisitionNumberLOVVO1">
+         <ui:contents>
+            <oa:messageStyledText id="EmployeeId" dataType="VARCHAR2" prompt="Employee Number" viewName="RequisitionNumberLOVVO1" viewAttr="EmployeeNumber" maximumLength="10" queryable="true"/>
+            <oa:messageStyledText id="EmployeeName" dataType="VARCHAR2" prompt="Employee Name" viewName="RequisitionNumberLOVVO1" viewAttr="EmployeeName" maximumLength="240" queryable="true"/>
+            <oa:messageStyledText id="ApproverItem" prompt="Approver" viewName="RequisitionNumberLOVVO1" viewAttr="ApproverName"/>
+            <oa:messageStyledText id="uniformsetname" prompt="Uniform Set Name" viewName="RequisitionNumberLOVVO1" viewAttr="UniformSetName"/>
+            <oa:formValue id="UniformsetIdFormValue" viewName="RequisitionNumberLOVVO1" viewAttr="UniformSetId"/>
+            <oa:formValue id="BusinessGroupIdLovFormValue" viewName="RequisitionNumberLOVVO1" viewAttr="BusinessGroupId"/>
+            <oa:formValue id="PersonIdLOVFormValue" viewName="RequisitionNumberLOVVO1" viewAttr="PersonId" dataType="NUMBER"/>
+         </ui:contents>
+      </oa:table>
+   </ui:contents>
+</oa:listOfValues>

@@ -1,0 +1,471 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+
+<Entity
+   Name="RequisitionHeaderEO"
+   DBObjectType="table"
+   DBObjectName="APPS.XX_UMS_REQUISITION_HEADER_V2"
+   AliasName="RequisitionHeaderEO"
+   BindingStyle="Oracle"
+   UseGlueCode="false"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEOImpl"
+   DefClass="oracle.apps.fnd.framework.server.OAEntityDefImpl"
+   CollClass="oracle.apps.fnd.framework.server.OAEntityCache" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <AttrArray Name="_publishEvents">
+      </AttrArray>
+      <Attr Name="_codeGenFlag2" Value="Init|Access" />
+   </DesignTime>
+   <Attribute
+      Name="UniformSetId"
+      ColumnName="UNIFORM_SET_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="PersonId"
+      ColumnName="PERSON_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="BusinessGroupId"
+      ColumnName="BUSINESS_GROUP_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="PreparerPersonId"
+      ColumnName="PREPARER_PERSON_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequisitionCreationDate"
+      ColumnName="REQUISITION_CREATION_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequisitionStatus"
+      Precision="250"
+      ColumnName="REQUISITION_STATUS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="250" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequisitionType"
+      Precision="50"
+      ColumnName="REQUISITION_TYPE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequisitionNumber"
+      Precision="100"
+      ColumnName="REQUISITION_NUMBER"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="RequisitionHeaderId"
+      ColumnName="REQUISITION_HEADER_ID"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2"
+      PrimaryKey="true" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="Remarks"
+      Precision="1999"
+      ColumnName="REMARKS"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="1999" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ContactNumber"
+      Precision="100"
+      ColumnName="CONTACT_NUMBER"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreatedBy"
+      IsNotNull="true"
+      ColumnName="CREATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="CreationDate"
+      IsNotNull="true"
+      ColumnName="CREATION_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdatedBy"
+      IsNotNull="true"
+      ColumnName="LAST_UPDATED_BY"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateDate"
+      IsNotNull="true"
+      ColumnName="LAST_UPDATE_DATE"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="DATE"
+      SQLType="TIMESTAMP"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="LastUpdateLogin"
+      ColumnName="LAST_UPDATE_LOGIN"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      SQLType="NUMERIC"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </Attribute>
+   <Attribute
+      Name="ReasonCode"
+      Precision="100"
+      ColumnName="REASON_CODE"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR"
+      TableName="APPS.XX_UMS_REQUISITION_HEADER_V2" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </Attribute>
+   <Key
+      Name="RequisitionheadereoPrimaryKey" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_isPrimary" Value="true" />
+         <Attr Name="_DBObjectName" Value="REQUISITIONHEADEREO_PRIMARY_KE" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098060" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.UniformSetId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;UNIFORM_SET_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098060" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098061" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.PersonId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;PERSON_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098061" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098062" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.BusinessGroupId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BUSINESS_GROUP_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098062" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098063" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionCreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098063" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098064" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionType" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_TYPE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098064" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098065" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionNumber" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_NUMBER&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098065" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098066" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_HEADER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098066" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098067" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.CreatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098067" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098068" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.CreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098068" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098069" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.LastUpdatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098069" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC001098070" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.LastUpdateDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C001098070" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196517" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.UniformSetId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;UNIFORM_SET_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196517" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196518" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.PersonId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;PERSON_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196518" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196519" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.BusinessGroupId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;BUSINESS_GROUP_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196519" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196520" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionCreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196520" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196521" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionType" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_TYPE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196521" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196522" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionNumber" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_NUMBER&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196522" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196523" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.RequisitionHeaderId" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;REQUISITION_HEADER_ID&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196523" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196524" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.CreatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196524" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196525" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.CreationDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;CREATION_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196525" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196526" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.LastUpdatedBy" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATED_BY&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196526" />
+      </DesignTime>
+   </Key>
+   <Key
+      Name="SysC00196527" >
+      <AttrArray Name="Attributes">
+         <Item Value="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionHeaderEO.LastUpdateDate" />
+      </AttrArray>
+      <DesignTime>
+         <Attr Name="_checkCondition" Value="&#34;LAST_UPDATE_DATE&#34; IS NOT NULL" />
+         <Attr Name="_isCheck" Value="true" />
+         <Attr Name="_DBObjectName" Value="SYS_C00196527" />
+      </DesignTime>
+   </Key>
+</Entity>

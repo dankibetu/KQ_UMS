@@ -1,0 +1,352 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="server"
+   SeparateXMLFiles="true"
+   PackageName="xxkq.oracle.apps.xbol.v2.employee.server" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+   </DesignTime>
+   <Containee
+      Name="AirxpAM"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.AirxpAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="ButtonPVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.ButtonPVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ButtonVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.ButtonVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EntitlementChangeReqLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementChangeReqLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EntitlementSearchVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSearchVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EntitlementSetupAM"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="EntitlementSetUpApproverVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetUpApproverVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EntitlementSetUpBusinessGroupVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetUpBusinessGroupVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EntitlementSetupHeaderVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupHeaderVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EntitlementSetupLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="EntitlementSetupTransientVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupTransientVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="InitialRequisitionTypeVVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.InitialRequisitionTypeVVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="IssueTrialVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.IssueTrialVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ItemDescForRequisitionVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.ItemDescForRequisitionVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ItemDescVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.ItemDescVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="LocatorFndProfileVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.LocatorFndProfileVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="MaterniityTempVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.MaterniityTempVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="MaternityVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.MaternityVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="MultiSelectionTransactionIssueLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.MultiSelectionTransactionIssueLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="NewRequisitionLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.NewRequisitionLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="NewTransactionLineIssueVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.NewTransactionLineIssueVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="OldTransactionLineIssueVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.OldTransactionLineIssueVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="PopulateUniformReturnLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.PopulateUniformReturnLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RenewalLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RenewalLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ReplacementLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.ReplacementLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionAM"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="RequisitionHeaderVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionHeaderVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionLineTableVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineTableVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionLineVO_Old"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVO_Old"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionSearchLinerVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSearchLinerVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionSearchVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSearchVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionSummaryHeaderVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSummaryHeaderVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionSummaryLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSummaryLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionSummaryVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSummaryVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionUSNVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionUSNVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RequisitionVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="ReturnTrialVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.ReturnTrialVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SearchAM"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SearchAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="SourceMaternityVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceMaternityVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SourceRenewelRequisitionVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceRenewelRequisitionVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SourceReplacementRequisitionVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceReplacementRequisitionVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SourceRequisitionInitialRequisitionVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceRequisitionInitialRequisitionVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SourceRequisitionLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceRequisitionLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SourceTransactionIssueLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceTransactionIssueLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SourceTransactionReturnLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceTransactionReturnLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SourceUniformReturnsLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.SourceUniformReturnsLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="test1VO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.test1VO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="test2VO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.test2VO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TestHeaderVoO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TestHeaderVoO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="testViewLink"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.testViewLink"
+      ObjectType="ViewLink" >
+   </Containee>
+   <Containee
+      Name="TotalQtyReturnedVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TotalQtyReturnedVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionHeaderIssueVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionHeaderIssueVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionHeaderReturnVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionHeaderReturnVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionIssueTransientVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionIssueTransientVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionLineIssueVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionLineIssueVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionReturnLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionReturnLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionReturnTransientVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionReturnTransientVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionSearchVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionSearchVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionSummaryHeaderVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionSummaryHeaderVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransactionSummaryLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionSummaryLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TranUniformHeaderVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TranUniformHeaderVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TrialVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.TrialVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="tryVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.tryVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="UniformReturnsAM"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.UniformReturnsAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="UniformReturnsHeaderVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.UniformReturnsHeaderVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="UniformReturnsLineVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.UniformReturnsLineVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="UniformReturnsTransientVO"
+      FullName="xxkq.oracle.apps.xbol.v2.employee.server.UniformReturnsTransientVO"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

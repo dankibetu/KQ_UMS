@@ -1,0 +1,112 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.AirxpAM" windowTitle="Transaction Issue Page" title="Issue Transaction" scope="/" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.TranscationIssueCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:messageComponentLayout id="TransactionHeaderIssueVO1" rows="3" columns="4">
+               <ui:contents>
+                  <oa:messageLovInput id="RequisitionNumber" dataType="VARCHAR2" prompt="Requisition Number" viewName="IssueTrialVO1" viewAttr="Requisitionnumber" maximumLength="100" queryable="true" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/lov/server/TransactionIssueRequisitionLovRN" disabled="false" readOnly="false" styleClass="OraDataText">
+                     <lovMappings>
+                        <lovMap id="RequisitionNumberLov" resultTo="RequisitionNumber" criteriaFrom="RequisitionNumber" lovItem="Requisitionnumber"/>
+                        <lovMap id="RequisitionStatusLov" lovItem="RequisitionStatus" resultTo="RequisitionStatus" criteriaFrom="RequisitionStatus"/>
+                        <lovMap id="RequisitionTypeLov" lovItem="RequisitionType" resultTo="RequisitionType" criteriaFrom="RequisitionType"/>
+                        <lovMap id="RequisitionDateLov" lovItem="RequisitionCreationDate" resultTo="RequisitionCreationDate" criteriaFrom="RequisitionCreationDate"/>
+                        <lovMap id="EmployeeIDLov" lovItem="Employeenumber" resultTo="Employeenumber" criteriaFrom="Employeenumber"/>
+                        <lovMap id="EmployeeNameLov" lovItem="EmployeeName" resultTo="EmployeeName" criteriaFrom="EmployeeName"/>
+                        <lovMap id="ContactNumberLov" lovItem="ContactNumber" resultTo="ContactNumber" criteriaFrom="ContactNumber"/>
+                        <lovMap id="RemarksLov" lovItem="Remarks" resultTo="Remarks" criteriaFrom="Remarks"/>
+                        <lovMap id="UniformSetNameLov" lovItem="UniformSetName" resultTo="UniformSetName" criteriaFrom="UniformSetName"/>
+                        <lovMap id="UniformSetID" lovItem="UniformSetId" resultTo="UniformSetIdFormValue" criteriaFrom="UniformSetIdFormValue"/>
+                        <lovMap id="ApproverlovMap13" lovItem="ApproverName" resultTo="Approver" criteriaFrom="Approver"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageStyledText id="RequisitionStatus" dataType="VARCHAR2" prompt="Requisition Status" viewName="IssueTrialVO1" viewAttr="RequisitionStatus" maximumLength="250" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="RequisitionType" dataType="VARCHAR2" prompt="RequisitionType" viewName="IssueTrialVO1" viewAttr="RequisitionType" maximumLength="50" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="RequisitionCreationDate" dataType="DATE" prompt="Requisition Date" viewName="IssueTrialVO1" viewAttr="RequisitionCreationDate" queryable="true" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="Employeenumber" dataType="VARCHAR2" prompt="Employee Number" viewName="IssueTrialVO1" viewAttr="Employeenumber" maximumLength="30" queryable="true" rendered="true" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="EmployeeName" dataType="VARCHAR2" prompt="Employee Name" viewName="IssueTrialVO1" viewAttr="EmployeeName" maximumLength="240" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="IssueTrialVO1" viewAttr="UniformSetName" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="Approver" viewName="IssueTrialVO1" viewAttr="ApproverName" prompt="Approver" maximumLength="240" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="IssueTransactionNumber" dataType="VARCHAR2" prompt="Issue Transaction Number" viewName="TransactionHeaderIssueVO1" viewAttr="TransactionNumber" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="TransactionStatus" dataType="VARCHAR2" prompt="Transaction Status" viewName="TransactionHeaderIssueVO1" viewAttr="TransactionStatus" maximumLength="50" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="ContactNumber" dataType="VARCHAR2" prompt="Contact Number" viewName="IssueTrialVO1" viewAttr="ContactNumber" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="IssueTrialVO1" viewAttr="Remarks" maximumLength="2000" styleClass="OraDataText"/>
+                  <oa:messageLayout id="FormValueLayout">
+                     <ui:contents>
+                        <oa:formValue id="UniformSetIdFormValue" viewName="TransactionHeaderIssueVO1" viewAttr="UniformSetId"/>
+                     </ui:contents>
+                  </oa:messageLayout>
+               </ui:contents>
+            </oa:messageComponentLayout>
+            <oa:spacer id="Spacer" height="30"/>
+            <oa:table id="TransactionLineIssueVO1" text="Transaction Issue Items Details" rendered="true" blockSize="100">
+               <ui:contents>
+                  <oa:messageStyledText id="LineNumber" dataType="NUMBER" prompt="Line Number" maximumLength="1999" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="TransactionLineNumber"/>
+                  <oa:messageStyledText id="Item_category" dataType="VARCHAR2" prompt="Item Category" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="ItemCategory"/>
+                  <oa:messageStyledText id="INVENTORY_ITEM_ID" dataType="VARCHAR2" prompt="Item Code" maximumLength="255" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="ItemCode"/>
+                  <oa:messageStyledText id="ItemDescription" dataType="VARCHAR2" prompt="Item Description" maximumLength="255" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="Description"/>
+                  <oa:messageStyledText id="UOM" dataType="VARCHAR2" prompt="UOM" maximumLength="255" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="PrimaryUnitOfMeasure"/>
+                  <oa:messageStyledText id="RequestedQty" dataType="NUMBER" prompt="Requested Quantity" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="RequestedQty"/>
+                  <oa:messageStyledText id="TotalIssuedQty" dataType="NUMBER" prompt="Total Issued Quantity" maximumLength="240" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="Totalissuedqty"/>
+                  <oa:messageLovInput id="OrganizationID" prompt="Inventory Organization" dataType="VARCHAR2" queryable="false" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/webui/OrganizationLovRN" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="OrganizationIDTransientIssue">
+                     <lovMappings>
+                        <lovMap id="OrganizationLov" resultTo="OrganizationID" criteriaFrom="OrganizationID" lovItem="OrganizationName"/>
+                        <lovMap id="lovMap5" lovItem="OrganizationId" resultTo="OrganizationIDFormValueIssue"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageLovInput id="Subinventory" prompt="Subinventory" maximumLength="50" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="Subinventory" queryable="false" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/webui/SubinventoryRN">
+                     <lovMappings>
+                        <lovMap id="lovMap6" lovItem="SecondaryInventoryName" resultTo="Subinventory" criteriaFrom="Subinventory"/>
+                        <lovMap id="lovMap7" lovItem="OrganizationIdFormValueforSubinventory" criteriaFrom="OrganizationIDFormValueIssue"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageLovInput id="LocatorId" prompt="Locator" dataType="VARCHAR2" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="LocatoerIDTransientIssue" queryable="false" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/webui/LocatorRN">
+                     <lovMappings>
+                        <lovMap id="lovMap8" lovItem="LocatorItem" resultTo="LocatorId" criteriaFrom="LocatorId"/>
+                        <lovMap id="lovMap9" lovItem="LocatorID" resultTo="LocatorIDFormValueIssue" criteriaFrom="LocatorIDFormValueIssue"/>
+                        <lovMap id="lovMap10" lovItem="OrganizationIdFormValueforLocator" criteriaFrom="OrganizationIDFormValueIssue"/>
+                        <lovMap id="lovMap11" lovItem="SubinventoryCodeFormValueforLocator" criteriaFrom="Subinventory"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageStyledText id="OnHandQuantity" prompt="On Hand Quantity" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="OnhandQuantity" maximumLength="122" dataType="NUMBER"/>
+                  <oa:messageStyledText id="Quantitypending" dataType="NUMBER" prompt="Quantity Pending" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="Quantitypending"/>
+                  <oa:messageStyledText id="ReturnedQty" dataType="NUMBER" prompt="Returned Quantity" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="TotalQtyReturned"/>
+                  <oa:messageTextInput id="TransactionQty" dataType="NUMBER" prompt="Issued Quantity" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="TransactionQty">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="ValidateIssuedQty"/>
+                     </ui:primaryClientAction>
+                  </oa:messageTextInput>
+                  <oa:messageTextInput id="ChargedQty" dataType="NUMBER" prompt="Charged Quantity" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="ChargedQty" disabled="false" rendered="true">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="AV"/>
+                     </ui:primaryClientAction>
+                  </oa:messageTextInput>
+                  <oa:messageTextInput id="UnitPrice" prompt="UnitPrice" dataType="NUMBER" maximumLength="30" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="UnitPrice">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="AV"/>
+                     </ui:primaryClientAction>
+                  </oa:messageTextInput>
+                  <oa:messageStyledText id="AmountCharged" dataType="NUMBER" prompt="Amount Charged" maximumLength="30" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="AmountCharged" rendered="true"/>
+                  <oa:messageTextInput id="TransactionIssueDate" dataType="DATE" prompt="Issue Date" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="TransactionDate"/>
+                  <oa:messageTextInput id="TransactionLineRemarks" dataType="VARCHAR2" prompt="Remarks" maximumLength="1999" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="Remarks"/>
+                  <oa:formValue id="OrganizationIDFormValueIssue" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="OrganizationId"/>
+                  <oa:formValue id="LocatorIDFormValueIssue" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="LocatorId"/>
+               </ui:contents>
+               <ui:tableSelection>
+                  <oa:multipleSelection id="MultiSelectionForLineItems" viewName="MultiSelectionTransactionIssueLineVO1" viewAttr="CheckBoxTransient"/>
+               </ui:tableSelection>
+            </oa:table>
+            <oa:pageButtonBar id="ButtonRN">
+               <ui:contents>
+                  <oa:button id="Clear" text="Clear" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/TransactionIssuePG" prompt="Clear" viewName="ButtonVO1" viewAttr="Clear"/>
+                  <oa:submitButton id="Issue" text="Issue" prompt="Issue" disabled="${oa.TransactionIssueTransientVO1.IssueTran}" viewName="ButtonVO1"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

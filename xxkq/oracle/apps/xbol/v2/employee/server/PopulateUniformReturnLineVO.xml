@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="PopulateUniformReturnLineVO"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.PopulateUniformReturnLineVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.PopulateUniformReturnLineVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT rownum as srnumber,
+       URLE.Transaction_ID,
+       URLE.Transaction_Header_id,
+       URLE.subinventory,
+       URLE.locator_id,
+       URLE.Unit_Price,
+       URLE.Category_id,
+       URLE.Organization_ID,
+       URLE.Charged_Qty,
+       URLE.Damaged_Qty,
+       URLE.Amount_Charged,
+       URLE.Transaction_Qty Quantity_Returned,
+       URLE.Inventory_Item_id,
+       msi.segment1 itemcode,
+       msi.primary_unit_of_measure,
+       msi.description itemdescription,
+       sum(xueo.onhand_qty) qty_with_employee,
+       xuutrq.Total_Returned_Qty,
+       mc.segment1||'.'||mc.segment2||'.'||mc.segment3 itemcategory,
+       xuth.uniform_set_id,
+       xuth.person_id,
+    URLE.transaction_date,
+      xuel.uniform_set_line_id,
+      decode(upper(xuel.maternity_flag),'Y','Yes','No') maternity_item
+FROM
+       XX_UMS_TRANSACTION_LINE_V2 URLE,
+       XX_UMS_TRANSACTION_HEADER_V2 xuth,
+       XX_UMS_ENTITLEMENT_LINE_V2 xuel,
+       XX_UMS_EMP_ONHAND_V2 xueo,
+       MTL_SYSTEM_ITEMS msi,
+       MTL_CATEGORIES mc,
+       MTL_ITEM_CATEGORIES mic,
+       XX_UMS_UR_TOT_RET_QTY_V2_VL xuutrq
+WHERE  URLE.Transaction_Header_id = xuth.Transaction_Header_id
+AND    URLE.inventory_item_id = msi.inventory_item_id
+AND    URLE.organization_id = msi.organization_id
+AND    URLE.uniform_set_line_id = xuel.uniform_set_line_id
+AND    URLE.transaction_header_id = xuutrq.transaction_header_id
+AND    URLE.uniform_set_line_id = xuutrq.uniform_set_line_id
+AND    URLE.category_id = xuutrq.category_id
+AND    URLE.organization_id =xuutrq.organization_id
+AND    xuth.return_type IS NOT NULL
+AND    xuel.uniform_set_line_id = xueo.uniform_set_line_id
+AND    xuth.uniform_set_id = xueo.uniform_set_id
+AND    xuel.category_id = xueo.category_id
+AND    xuth.person_id = xueo.person_id
+AND    xuth.business_group_id = xueo.business_group_id
+AND    xuel.category_id = mc.category_id
+AND    mc.category_id = mic.category_id
+AND    msi.organization_id = mic.organization_id
+AND    msi.inventory_item_id = mic.inventory_item_id 
+GROUP BY URLE.Transaction_ID,
+         URLE.Transaction_Header_id,
+         URLE.subinventory,
+         URLE.locator_id,
+         URLE.Unit_Price,
+         URLE.Category_id,
+         URLE.Organization_ID,
+         URLE.Charged_Qty,
+         URLE.Damaged_Qty,
+         URLE.Amount_Charged,
+         URLE.Transaction_Qty,
+         URLE.Inventory_Item_id,
+         xuutrq.Total_Returned_Qty,
+         msi.segment1 ,
+         msi.primary_unit_of_measure,
+         msi.description,
+         mc.segment1||'.'||mc.segment2||'.'||mc.segment3,
+         xuth.uniform_set_id,
+         xuth.person_id,
+         URLE.transaction_date,
+         xuel.uniform_set_line_id,
+         rownum,
+         decode(upper(xuel.maternity_flag),'Y','Yes','No')
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Srnumber"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="SRNUMBER"
+      Expression="SRNUMBER"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="TRANSACTION_ID"
+      Expression="TRANSACTION_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionHeaderId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="TRANSACTION_HEADER_ID"
+      Expression="TRANSACTION_HEADER_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Subinventory"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="50"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="SUBINVENTORY"
+      Expression="SUBINVENTORY"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LocatorId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="LOCATOR_ID"
+      Expression="LOCATOR_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UnitPrice"
+      IsPersistent="false"
+      Precision="30"
+      Scale="2"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="UNIT_PRICE"
+      Expression="UNIT_PRICE"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CategoryId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="CATEGORY_ID"
+      Expression="CATEGORY_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="ORGANIZATION_ID"
+      Expression="ORGANIZATION_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ChargedQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="CHARGED_QTY"
+      Expression="CHARGED_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DamagedQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="DAMAGED_QTY"
+      Expression="DAMAGED_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AmountCharged"
+      IsPersistent="false"
+      Precision="30"
+      Scale="2"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="AMOUNT_CHARGED"
+      Expression="AMOUNT_CHARGED"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionQty"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="TransactionQty"
+      Expression="QUANTITY_RETURNED"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="InventoryItemId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="INVENTORY_ITEM_ID"
+      Expression="INVENTORY_ITEM_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Itemcode"
+      IsPersistent="false"
+      Precision="40"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="ITEMCODE"
+      Expression="ITEMCODE"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PrimaryUnitOfMeasure"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PRIMARY_UNIT_OF_MEASURE"
+      Expression="PRIMARY_UNIT_OF_MEASURE"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Itemdescription"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="ITEMDESCRIPTION"
+      Expression="ITEMDESCRIPTION"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="QtyWithEmployee"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="QTY_WITH_EMPLOYEE"
+      Expression="QTY_WITH_EMPLOYEE"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TotalReturnedQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="TOTAL_RETURNED_QTY"
+      Expression="TOTAL_RETURNED_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Itemcategory"
+      IsPersistent="false"
+      Precision="122"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="ITEMCATEGORY"
+      Expression="ITEMCATEGORY"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="122" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="UNIFORM_SET_ID"
+      Expression="UNIFORM_SET_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PersonId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="PERSON_ID"
+      Expression="PERSON_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionDate"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="VARCHAR2"
+      AliasName="TRANSACTION_DATE"
+      Expression="TRANSACTION_DATE"
+      SQLType="DATE" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ItemCodeTransient"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ItemDescriptionTransient"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UOMTransient"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="WhereHouseTransient"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SubInventoryTransient"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LocatorTransient"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="testTran"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="MultiSelectionTransient"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetLineId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="UniformSetLineId"
+      Expression="UniformSetLineId"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="MaternityItem"
+      IsPersistent="false"
+      Precision="3"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="MaternityItem"
+      Expression="MaternityItem"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+</ViewObject>

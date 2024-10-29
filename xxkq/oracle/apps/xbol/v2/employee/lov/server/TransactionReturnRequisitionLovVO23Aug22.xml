@@ -1,0 +1,232 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="TransactionReturnRequisitionLovVO"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.lov.server.TransactionReturnRequisitionLovVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select 
+       employee_number as EmployeeNumber,
+       full_name as Employee_name,
+       REQUISITION_STATUS,
+       UNIFORM_SET_NAME,
+       UNIFORM_SET_id,
+       PREPARER_NAME,
+       REQUISITION_CREATION_DATE,
+       CONTACT_NUMBER,
+       REQUISITION_NUMBER as RequisitionNumber,
+       RequisitionType,
+       REMARKS,
+       Approver_Name 
+FROM XX_UMS_RET_TRX_REQ_LOV_V2_VL
+/*
+from per_all_assignments_f paaf,
+     per_all_people_f papf,
+     xx_ums_requisition_header_v2 xurh,
+     xx_ums_entitlement_header_v2 xueh
+where paaf.person_id=papf.person_id
+and paaf.business_group_id = papf.business_group_id
+AND upper(xurh.REQUISITION_STATUS) IN('OPEN', 'APPROVED')
+and xurh.REQUISITION_TYPE = 'RPR'
+and xurh.UNIFORM_SET_ID = xueh.UNIFORM_SET_ID
+and xurh.PERSON_ID = papf.person_id
+and xurh.business_group_id = papf.business_group_id
+and trunc(sysdate) between trunc(paaf.effective_start_date) and trunc(paaf.effective_end_date)
+and trunc(sysdate) between trunc(papf.effective_start_date) and trunc(papf.effective_end_date)
+and paaf.primary_flag ='Y'
+and paaf.assignment_type <> 'A'
+*/
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="TransactionHeaderIssueEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.schema.server.TransactionHeaderIssueEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Employeenumber"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="employee_number"
+      Passivate="true"
+      Expression="employee_number"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EmployeeName"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="EMPLOYEE_NAME"
+      Expression="EMPLOYEE_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionStatus"
+      IsPersistent="false"
+      Precision="250"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="REQUISITION_STATUS"
+      Expression="REQUISITION_STATUS"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="250" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetName"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="100"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="UNIFORM_SET_NAME"
+      Expression="UNIFORM_SET_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="100"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="UNIFORM_SET_ID"
+      Expression="UNIFORM_SET_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PreparerName"
+      IsPersistent="false"
+      Precision="200"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PREPARER_NAME"
+      Expression="PREPARER_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="200" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionCreationDate"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="200"
+      Type="oracle.jbo.domain.Date"
+      ColumnType="VARCHAR2"
+      AliasName="REQUISITION_CREATION_DATE"
+      Expression="REQUISITION_CREATION_DATE"
+      SQLType="DATE" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="7" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ContactNumber"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="CONTACT_NUMBER"
+      Expression="CONTACT_NUMBER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Requisitionnumber"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="100"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="REQUISITIONNUMBER"
+      Expression="REQUISITIONNUMBER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionType"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="50"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="REQUISITION_TYPE"
+      Expression="REQUISITION_TYPE"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="50" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      IsPersistent="false"
+      Precision="1999"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="REMARKS"
+      Expression="REMARKS"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="1999" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ApproverName"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="APPROVER_NAME"
+      Expression="APPROVER_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionHeaderId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="TRANSACTION_HEADER_ID"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionNumber"
+      IsPersistent="false"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="TRANSACTION_NUMBER"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+</ViewObject>

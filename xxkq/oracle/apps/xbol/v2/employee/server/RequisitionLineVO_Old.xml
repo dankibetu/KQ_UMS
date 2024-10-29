@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="RequisitionLineVO_Old"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVO_OldRowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVO_OldImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT RequisitionLineEO.REQUISITION_HEADER_ID, 
+       RequisitionLineEO.REQUISITION_LINE_ID, 
+       RequisitionLineEO.LINE_NUMBER, 
+       RequisitionLineEO.UNIFORM_SET_LINE_ID, 
+       RequisitionLineEO.INVENTORY_ITEM_ID, 
+       RequisitionLineEO.ORGANIZATION_ID, 
+       RequisitionLineEO.REQUESTED_QTY, 
+       RequisitionLineEO.DAMAGE_QTY, 
+       RequisitionLineEO.CHARGABLE_QTY, 
+       RequisitionLineEO.NEED_BY_DATE, 
+       RequisitionLineEO.REASON_CODE, 
+       RequisitionLineEO.REMARKS, 
+       RequisitionLineEO.STATUS, 
+       RequisitionLineEO.RETURN_ITEM_ID, 
+       RequisitionLineEO.RETURN_ORGANIZATION_ID, 
+       RequisitionLineEO.TOTAL_ISSUED_QTY, 
+       RequisitionLineEO.RETURNED_QTY, 
+       RequisitionLineEO.CREATED_BY, 
+       RequisitionLineEO.CREATION_DATE, 
+       RequisitionLineEO.LAST_UPDATED_BY, 
+       RequisitionLineEO.LAST_UPDATE_DATE, 
+       RequisitionLineEO.LAST_UPDATE_LOGIN, 
+       RequisitionLineEO.ATTRIBUTE1, 
+       RequisitionLineEO.ATTRIBUTE2, 
+       RequisitionLineEO.ATTRIBUTE3, 
+       RequisitionLineEO.ATTRIBUTE4, 
+       RequisitionLineEO.ATTRIBUTE5, 
+       RequisitionLineEO.ATTRIBUTE6, 
+       RequisitionLineEO.ATTRIBUTE7, 
+       RequisitionLineEO.ATTRIBUTE8, 
+       RequisitionLineEO.ATTRIBUTE9, 
+       RequisitionLineEO.ATTRIBUTE10, 
+       RequisitionLineEO.ATTRIBUTE11, 
+       RequisitionLineEO.ATTRIBUTE12, 
+       RequisitionLineEO.ATTRIBUTE13, 
+       RequisitionLineEO.ATTRIBUTE14, 
+       RequisitionLineEO.ATTRIBUTE15, 
+       RequisitionLineEO.ATTRIBUTE16, 
+       RequisitionLineEO.ATTRIBUTE17, 
+       RequisitionLineEO.ATTRIBUTE18, 
+       RequisitionLineEO.ATTRIBUTE19, 
+       RequisitionLineEO.ATTRIBUTE20
+FROM APPS.XX_UMS_REQUISITION_LINE_V2 RequisitionLineEO
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.3.12.53" />
+      <Attr Name="_CodeGenFlagNew" Value="36" />
+   </DesignTime>
+   <EntityUsage
+      Name="RequisitionLineEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="ItemCategory"
+      IsPersistent="false"
+      Precision="122"
+      Type="java.lang.String"
+      AliasName="ITEM_CATEGORY"
+      ColumnType="VARCHAR2"
+      Expression="ITEM_CATEGORY"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="122" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EntitledQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="ENTITLED_QTY"
+      ColumnType="VARCHAR2"
+      Expression="ENTITLED_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CategoryId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      AliasName="CATEGORY_ID"
+      ColumnType="VARCHAR2"
+      Expression="CATEGORY_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Uniformsetid"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      AliasName="UNIFORMSETID"
+      ColumnType="VARCHAR2"
+      Expression="UNIFORMSETID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RenewelQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="RENEWEL_QTY"
+      ColumnType="VARCHAR2"
+      Expression="RENEWEL_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LifeExpectancy"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="LIFE_EXPECTANCY"
+      ColumnType="VARCHAR2"
+      Expression="LIFE_EXPECTANCY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EligibleRenewalQty"
+      IsPersistent="false"
+      Precision="1999"
+      Type="oracle.jbo.domain.Number"
+      AliasName="ELIGIBLE_RENEWAL_QTY"
+      ColumnType="VARCHAR2"
+      Expression="ELIGIBLE_RENEWAL_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SumXueoOnhandQty"
+      IsPersistent="false"
+      Precision="255"
+      Type="oracle.jbo.domain.Number"
+      AliasName="SUMXUEOONHANDQTY"
+      ColumnType="VARCHAR2"
+      Expression="SUM(XUEO.ONHAND_QTY)"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Itemdescription"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      AliasName="ITEMDESCRIPTION"
+      ColumnType="VARCHAR2"
+      Expression="ITEMDESCRIPTION"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Uom"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      AliasName="UOM"
+      ColumnType="VARCHAR2"
+      Expression="UOM"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="tempForItemNo"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReplacementItemForItem"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="tempForSelection"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="t1"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="t2"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RenewalTempForSelection"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ChargableQty"
+      IsPersistent="false"
+      Precision="20"
+      Type="oracle.jbo.domain.Number"
+      AliasName="CHARGABLE_QTY"
+      ColumnType="VARCHAR2"
+      Expression="UNIFORMSETID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReturnedQty"
+      IsPersistent="false"
+      Precision="1999"
+      Type="oracle.jbo.domain.Number"
+      AliasName="RETURNED_QTY"
+      ColumnType="VARCHAR2"
+      Expression="RENEWEL_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReasonCode"
+      IsPersistent="false"
+      Precision="10"
+      Type="java.lang.String"
+      AliasName="REASON_CODE"
+      ColumnType="VARCHAR2"
+      Expression="LIFE_EXPECTANCY"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="20" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReturnItemId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="RETURN_ITEM_ID"
+      ColumnType="VARCHAR2"
+      Expression="ELIGIBLE_RENEWAL_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      AliasName="ORGANIZATION_ID"
+      ColumnType="VARCHAR2"
+      Expression="REQUESTED_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReasonCode1"
+      IsPersistent="false"
+      Precision="20"
+      Type="java.lang.String"
+      AliasName="ReasonCode1"
+      ColumnType="VARCHAR2"
+      Expression="ReasonCode1"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReturnItemId1"
+      IsPersistent="false"
+      Type="java.lang.String"
+      AliasName="ReturnItemId1"
+      ColumnType="VARCHAR2"
+      Expression="ReturnItemId1"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationId1"
+      IsPersistent="false"
+      Type="java.lang.String"
+      AliasName="OrganizationId1"
+      ColumnType="VARCHAR2"
+      Expression="OrganizationId1"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SumXueoOnhandQty1"
+      IsPersistent="false"
+      Type="java.lang.String"
+      AliasName="SumXueoOnhandQty1"
+      ColumnType="VARCHAR2"
+      Expression="SumXueoOnhandQty1"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Itemdescription1"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      AliasName="Itemdescription1"
+      ColumnType="VARCHAR2"
+      Expression="Itemdescription1"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Uom1"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      AliasName="Uom1"
+      ColumnType="VARCHAR2"
+      Expression="Uom1"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute6"
+      IsPersistent="false"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE6"
+      ColumnType="VARCHAR2"
+      Expression="LAST_UPDATE_LOGIN"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute7"
+      IsPersistent="false"
+      Precision="150"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE7"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE1"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute8"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE8"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE2"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute9"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE9"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE3"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute10"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE10"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE4"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute11"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE11"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE5"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute12"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE12"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE6"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute13"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE13"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE7"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute14"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE14"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE8"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute15"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE15"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE9"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute16"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE16"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE10"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute17"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE17"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE11"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute18"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE18"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE12"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute19"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE19"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE13"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute20"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="ATTRIBUTE20"
+      ColumnType="VARCHAR2"
+      Expression="ATTRIBUTE14"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute1"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="Attribute1"
+      ColumnType="VARCHAR2"
+      Expression="Attribute1"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute2"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="Attribute2"
+      ColumnType="VARCHAR2"
+      Expression="Attribute2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute3"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="Attribute3"
+      ColumnType="VARCHAR2"
+      Expression="Attribute3"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute4"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="Attribute4"
+      ColumnType="VARCHAR2"
+      Expression="Attribute4"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute5"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="Attribute5"
+      ColumnType="VARCHAR2"
+      Expression="Attribute5"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute21"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      AliasName="Attribute21"
+      ColumnType="VARCHAR2"
+      Expression="Attribute21"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+</ViewObject>

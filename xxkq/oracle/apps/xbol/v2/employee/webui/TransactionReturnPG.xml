@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.AirxpAM" windowTitle="Transaction Return Page" title="Employee Return Transaction" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.TransactionReturnCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:messageComponentLayout id="TransactionHeaderReturnVO1" rows="3" columns="4">
+               <ui:contents>
+                  <oa:messageLovInput id="Requisitionnumber" dataType="VARCHAR2" prompt="Requisition Number" viewAttr="Requisitionnumber" maximumLength="100" viewName="ReturnTrialVO1" styleClass="OraDataText">
+                     <lovContents>
+                        <oa:listOfValues id="region1" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.AirxpLovAM">
+                           <ui:contents>
+                              <oa:table name="region1" id="TransactionReturnRequisitionLovVO1" blockSize="100">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="ReturnRequisitionnumber" dataType="VARCHAR2" prompt="Requisition Number" viewName="TransactionReturnRequisitionLovVO1" viewAttr="Requisitionnumber" maximumLength="100" queryable="true"/>
+                                    <oa:messageStyledText id="ReturnEmployeenumber" dataType="VARCHAR2" prompt="Employee ID" viewName="TransactionReturnRequisitionLovVO1" viewAttr="Employeenumber" maximumLength="30" queryable="true"/>
+                                    <oa:messageStyledText id="ReturnEmployeeName" dataType="VARCHAR2" prompt="Employee Name" viewName="TransactionReturnRequisitionLovVO1" viewAttr="EmployeeName" maximumLength="240" queryable="true"/>
+                                    <oa:messageStyledText id="ReturnUniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="TransactionReturnRequisitionLovVO1" viewAttr="UniformSetName" maximumLength="100" queryable="true"/>
+                                    <oa:messageStyledText id="ReturnRequisitionType" dataType="VARCHAR2" prompt="RequisitionType" viewName="TransactionReturnRequisitionLovVO1" viewAttr="RequisitionType" maximumLength="50" queryable="true"/>
+                                    <oa:formValue id="ReturnTransactionHeaderId" dataType="NUMBER" prompt="TransactionHeaderId" viewName="TransactionReturnRequisitionLovVO1" viewAttr="TransactionHeaderId" queryable="true"/>
+                                    <oa:formValue id="ReturnTransactionNumber" dataType="VARCHAR2" prompt="Transaction Status" viewName="TransactionReturnRequisitionLovVO1" viewAttr="TransactionNumber" queryable="true"/>
+                                    <oa:formValue id="ReturnRequisitionStatus" dataType="VARCHAR2" prompt="Requisition Status" viewName="TransactionReturnRequisitionLovVO1" viewAttr="RequisitionStatus" queryable="true"/>
+                                    <oa:formValue id="ReturnPreparerName" dataType="VARCHAR2" prompt="Preparer Name" viewName="TransactionReturnRequisitionLovVO1" viewAttr="PreparerName" queryable="true"/>
+                                    <oa:formValue id="ReturnRequisitionCreationDate" dataType="DATE" prompt="Requisition Date" viewName="TransactionReturnRequisitionLovVO1" viewAttr="RequisitionCreationDate" queryable="true"/>
+                                    <oa:formValue id="ReturnContactNumber" dataType="VARCHAR2" prompt="Contact Number" viewName="TransactionReturnRequisitionLovVO1" viewAttr="ContactNumber" queryable="true"/>
+                                    <oa:formValue id="ReturnRemarks" dataType="VARCHAR2" prompt="Remarks" viewName="TransactionReturnRequisitionLovVO1" viewAttr="Remarks" queryable="true"/>
+                                    <oa:formValue id="ReturnApproverName" dataType="VARCHAR2" prompt="Approver Name" viewName="TransactionReturnRequisitionLovVO1" viewAttr="ApproverName" queryable="true"/>
+                                    <oa:formValue id="ReturnUniformSetId" viewName="TransactionReturnRequisitionLovVO1" viewAttr="UniformSetId" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="RequisitionNumberlovMap1" lovItem="ReturnRequisitionnumber" resultTo="Requisitionnumber" criteriaFrom="Requisitionnumber"/>
+                        <lovMap id="getUniformSetId" lovItem="ReturnUniformSetId" resultTo="UniformSetIdFormValue" criteriaFrom="UniformSetIdFormValue"/>
+                        <lovMap id="RemarkslovMap12" lovItem="ReturnRemarks" resultTo="Remarks" criteriaFrom="Remarks"/>
+                        <lovMap id="ContactNumberlovMap11" lovItem="ReturnContactNumber" resultTo="ContactNumber" criteriaFrom="ContactNumber"/>
+                        <lovMap id="ApproverlovMap10" lovItem="ReturnApproverName" resultTo="ApproverName" criteriaFrom="ApproverName"/>
+                        <lovMap id="RequisitionDatelovMap9" lovItem="ReturnRequisitionCreationDate" resultTo="RequisitionCreationDate" criteriaFrom="RequisitionCreationDate"/>
+                        <lovMap id="UniformSetNamelovMap6" lovItem="ReturnUniformSetName" resultTo="UniformSetName" criteriaFrom="UniformSetName"/>
+                        <lovMap id="EmployeeNamelovMap5" lovItem="ReturnEmployeeName" resultTo="EmployeeName" criteriaFrom="EmployeeName"/>
+                        <lovMap id="EmployeeNumberlovMap4" lovItem="ReturnEmployeenumber" resultTo="Employeenumber" criteriaFrom="Employeenumber"/>
+                        <lovMap id="RequisitionTypelovMap3" lovItem="ReturnRequisitionType" resultTo="RequisitionType" criteriaFrom="RequisitionType"/>
+                        <lovMap id="RequisitionStatuslovMap2" lovItem="ReturnRequisitionStatus" resultTo="RequisitionStatus" criteriaFrom="RequisitionStatus"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageTextInput id="RequisitionType" dataType="VARCHAR2" prompt="Requisition Type" viewName="ReturnTrialVO1" viewAttr="RequisitionType" maximumLength="50" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="RequisitionStatus" dataType="VARCHAR2" prompt="Requisition Status" viewName="ReturnTrialVO1" viewAttr="RequisitionStatus" maximumLength="250" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="RequisitionCreationDate" dataType="DATE" prompt="Requisition Date" viewName="ReturnTrialVO1" viewAttr="RequisitionCreationDate" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="Employeenumber" dataType="VARCHAR2" prompt="Employee ID" viewName="ReturnTrialVO1" viewAttr="Employeenumber" maximumLength="30" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="EmployeeName" dataType="VARCHAR2" prompt="Employee Name" viewName="ReturnTrialVO1" viewAttr="EmployeeName" maximumLength="240" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="ReturnTrialVO1" viewAttr="UniformSetName" maximumLength="100" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="ApproverName" dataType="VARCHAR2" prompt="Approver" viewName="ReturnTrialVO1" viewAttr="ApproverName" maximumLength="240" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="TransactionNumber" dataType="VARCHAR2" prompt="Return Transaction Number" viewName="TransactionHeaderReturnVO1" viewAttr="TransactionNumber" maximumLength="100" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="TransactionStatus" dataType="VARCHAR2" prompt="Transaction Status" viewName="TransactionHeaderReturnVO1" viewAttr="TransactionStatus" maximumLength="50" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="ContactNumber" dataType="VARCHAR2" prompt="Contact Number" viewName="ReturnTrialVO1" viewAttr="ContactNumber" maximumLength="100" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageTextInput id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="ReturnTrialVO1" viewAttr="Remarks" maximumLength="1999" readOnly="true" styleClass="OraDataText"/>
+                  <oa:messageLayout id="messageLayout1">
+                     <ui:contents>
+                        <oa:formValue id="UniformSetIdFormValue" viewName="TransactionHeaderReturnVO1" viewAttr="UniformSetId"/>
+                        <oa:formValue id="TransactionHeaderIDFormValue" viewName="TransactionHeaderReturnVO1" viewAttr="TransactionHeaderId"/>
+                        <oa:formValue id="RequisitionHeaderIdFormValue" viewName="TransactionHeaderReturnVO1" viewAttr="RequisitionHeaderId"/>
+                     </ui:contents>
+                  </oa:messageLayout>
+               </ui:contents>
+            </oa:messageComponentLayout>
+            <oa:spacer id="Spacer" height="30"/>
+            <oa:table id="TransactionReturnLineVO1" text="Return Details" width="100%" blockSize="100">
+               <ui:contents>
+                  <oa:messageStyledText id="Linenumber" viewName="TransactionReturnLineVO1" viewAttr="TransactionLineNumber" prompt="Line Number"/>
+                  <oa:messageStyledText id="ItemCode" viewName="TransactionReturnLineVO1" viewAttr="ItemCode" prompt="Item Code"/>
+                  <oa:messageStyledText id="Description" viewName="TransactionReturnLineVO1" viewAttr="Description" prompt="Description" maximumLength="240"/>
+                  <oa:messageStyledText id="RequestedQuantity" dataType="NUMBER" prompt="Requested Quantity" viewName="TransactionReturnLineVO1" viewAttr="RequestedQty"/>
+                  <oa:messageStyledText id="ChargableQty" dataType="NUMBER" prompt="Charged Quantity" viewName="TransactionReturnLineVO1" viewAttr="ChargableQty"/>
+                  <oa:messageStyledText id="Returnedqty" viewName="TransactionReturnLineVO1" viewAttr="ReturnedQty" prompt="Returned quantity" dataType="NUMBER"/>
+                  <oa:messageStyledText id="TotalQuantityReturn" viewName="TransactionReturnLineVO1" viewAttr="TotalQtyReturned" prompt="Total Quantity Return" dataType="NUMBER"/>
+                  <oa:messageLovInput id="OrganizationID" dataType="VARCHAR2" prompt="Inventory Organization" queryable="false" viewName="TransactionReturnLineVO1" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/webui/OrganizationLovRN" viewAttr="OrganizationIDTransient">
+                     <lovMappings>
+                        <lovMap id="lovMap6" lovItem="OrganizationName" resultTo="OrganizationID" criteriaFrom="OrganizationID"/>
+                        <lovMap id="lovMap7" lovItem="OrganizationId" resultTo="OrganizationIDFormValueReturn"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageLovInput id="Subinventory" dataType="VARCHAR2" prompt="Subinventory" viewName="TransactionReturnLineVO1" viewAttr="Subinventory" maximumLength="50" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/webui/SubinventoryRN" queryable="false">
+                     <lovMappings>
+                        <lovMap id="lovMap1" lovItem="SecondaryInventoryName" resultTo="Subinventory" criteriaFrom="Subinventory"/>
+                        <lovMap id="lovMap5" lovItem="OrganizationIdFormValueforSubinventory" criteriaFrom="OrganizationIDFormValueReturn"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageLovInput id="LocatorID" dataType="VARCHAR2" prompt="Locator" viewName="TransactionReturnLineVO1" queryable="false" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/webui/LocatorRN" viewAttr="LocatorIDTransient">
+                     <lovMappings>
+                        <lovMap id="lovMap8" lovItem="LocatorItem" resultTo="LocatorID" criteriaFrom="LocatorID"/>
+                        <lovMap id="lovMap9" lovItem="LocatorID" resultTo="LocatorIDFormValueReturn" criteriaFrom="LocatorIDFormValueReturn"/>
+                        <lovMap id="lovMap10" lovItem="OrganizationIdFormValueforLocator" criteriaFrom="OrganizationIDFormValueReturn"/>
+                        <lovMap id="lovMap11" lovItem="SubinventoryCodeFormValueforLocator" criteriaFrom="Subinventory"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageTextInput id="UnitPrice" dataType="NUMBER" prompt="Unit Price" viewName="TransactionReturnLineVO1" viewAttr="UnitPrice" maximumLength="30">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="RV"/>
+                     </ui:primaryClientAction>
+                  </oa:messageTextInput>
+                  <oa:messageTextInput id="ActualTransactionQty" dataType="NUMBER" prompt="Actual Quantity Return" viewName="TransactionReturnLineVO1" viewAttr="TransactionQty">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="RV"/>
+                     </ui:primaryClientAction>
+                  </oa:messageTextInput>
+                  <oa:messageStyledText id="TransactionDate" dataType="DATE" prompt="Receipt Date" viewName="TransactionReturnLineVO1" viewAttr="TransactionDate"/>
+                  <oa:messageStyledText id="Receiptvalue" dataType="NUMBER" prompt="Receipt Value" viewName="TransactionReturnLineVO1" viewAttr="Receiptvalue" maximumLength="240"/>
+                  <oa:formValue id="OrganizationIDFormValueReturn" viewName="TransactionReturnLineVO1" viewAttr="OrganizationId"/>
+                  <oa:formValue id="LocatorIDFormValueReturn" viewName="TransactionReturnLineVO1" viewAttr="LocatorId"/>
+               </ui:contents>
+            </oa:table>
+            <oa:pageButtonBar id="ButtonRN">
+               <ui:contents>
+                  <oa:button id="Clear" prompt="Clear" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/TransactionReturnPG" viewName="ButtonVO1" viewAttr="Clear"/>
+                  <oa:submitButton id="Receipt" prompt="Receipt" disabled="${oa.TransactionReturnTransientVO1.ReceiptTran}" viewName="ButtonVO1"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

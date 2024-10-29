@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="TotalQtyReturnedVO"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.TotalQtyReturnedVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT SUM(xutl.transaction_qty) totalquantityreturn
+FROM XX_UMS_TRANSACTION_HEADER_V2 xuth,
+     XX_UMS_TRANSACTION_LINE_V2 xutl,
+     XX_UMS_REQUISITION_HEADER_V2 xurh,
+     XX_UMS_REQUISITION_LINE_V2 xurl
+WHERE xuth.transaction_header_id=xutl.transaction_header_id
+AND xutl.requisition_line_id=xurl.requisition_line_id
+AND xutl.uniform_set_line_id=xurl.uniform_set_line_id
+AND xurl.requisition_header_id=xurh.requisition_header_id
+AND xurh.requisition_header_id=xuth.requisition_header_id
+AND xuth.transaction_type='R'
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Totalquantityreturn"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="TOTALQUANTITYRETURN"
+      Expression="TOTALQUANTITYRETURN"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

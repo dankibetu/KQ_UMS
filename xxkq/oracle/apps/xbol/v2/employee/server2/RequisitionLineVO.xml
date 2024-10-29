@@ -1,0 +1,411 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="RequisitionLineVO"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT requisition_line_id
+     , requisition_header_id
+     , uniform_set_line_id
+     , line_number
+     , inventory_item_id
+     , need_by_date
+     , remarks
+     , item_category
+     , entitled_qty
+     , category_id
+     , uniformsetid
+     , renewel_qty
+     , life_expectancy
+     , eligible_renewal_qty
+     , requested_qty
+     , damage_qty
+     , chargable_qty
+     , returned_qty
+     , reason_code
+     , return_item_id
+     , organization_id
+     , on_hand_qty
+     , itemdescription
+     , uom
+  FROM xxums_requisition_line_v2_v
+
+/*select RequisitionLineEO.REQUISITION_LINE_ID,
+       xurh.REQUISITION_HEADER_ID,
+       RequisitionLineEO.UNIFORM_SET_LINE_ID,
+       rownum,
+       RequisitionLineEO.INVENTORY_ITEM_ID,
+       RequisitionLineEO.NEED_BY_DATE,
+       RequisitionLineEO.REMARKS,       MC.segment1||'.'||MC.segment2||'.'||MC.segment3 as item_category,
+       XUEL.entitled_qty,
+       XUEL.CATEGORY_ID,
+       XUEH.UNIFORM_SET_ID as uniformsetid,
+       xuel.RENEWEL_QTY,
+       xuel.LIFE_EXPECTANCY,
+       100 as eligible_renewal_qty,       --NVL(XX_UMS_ELIGIBLE_QTY_F(XURH.person_id,XUEL.life_expectancy,XUEL.entitled_qty),0) as eligible_renewal_qty,
+       RequisitionLineEO.REQUESTED_QTY,
+       RequisitionLineEO.DAMAGE_QTY,
+       RequisitionLineEO.CHARGABLE_QTY,
+       RequisitionLineEO.RETURNED_QTY,
+       RequisitionLineEO.REASON_CODE,
+       RequisitionLineEO.RETURN_ITEM_ID,
+       XUEL.INVENTORY_ORGANIZATION_ID as ORGANIZATION_ID,
+sum(xueo.onhand_qty),
+MSI.description ItemDescription,
+MSI.primary_unit_of_measure UOM
+from XX_UMS_REQUISITION_LINE_V2 RequisitionLineEO,
+     XX_UMS_REQUISITION_Header_V2 xurh,
+     XX_UMS_ENTITLEMENT_HEADER_V2 XUEH,
+     XX_UMS_ENTITLEMENT_LINE_V2 XUEL,
+     MTL_CATEGORIES MC,
+     XX_UMS_EMP_ONHAND_V2 xueo,
+     mtl_system_items_b msi,
+     FND_ID_FLEX_STRUCTURES_VL ffsv       
+where MC.disable_date is null
+AND MC.enabled_flag ='Y'
+AND xueh.UNIFORM_SET_ID = xuel.UNIFORM_SET_ID
+AND xuel.enable_flag='Y' 
+AND xuel.renewel_eligibility_flag='Y'
+and xuel.CATEGORY_ID = mc.CATEGORY_ID
+and RequisitionLineEO.UNIFORM_SET_LINE_ID = xuel.UNIFORM_SET_LINE_ID
+and xurh.REQUISITION_HEADER_ID = RequisitionLineEO.REQUISITION_HEADER_ID
+AND   xueh.uniform_set_id=xueo.uniform_set_id
+AND   xuel.uniform_set_line_id = xueo.uniform_set_line_id
+AND   xurh.person_id=xueo.person_id
+AND   xurh.business_group_id = xueo.business_group_id
+and msi.inventory_item_id=RequisitionLineEO.inventory_item_id
+and msi.organization_id=RequisitionLineEO.organization_id
+AND    mc.structure_id      = ffsv.id_flex_num
+AND    ffsv.id_flex_code ='MCAT'
+AND    ffsv.application_id = 401
+AND    ffsv.structure_view_name = 'UMS_ITEM_CATEGORY_NAME'
+AND    1=2
+group by
+RequisitionLineEO.REQUISITION_LINE_ID,
+       xurh.REQUISITION_HEADER_ID,
+RequisitionLineEO.UNIFORM_SET_LINE_ID,
+rownum,RequisitionLineEO.INVENTORY_ITEM_ID,
+       RequisitionLineEO.NEED_BY_DATE,
+       RequisitionLineEO.REMARKS,
+       RequisitionLineEO.REASON_CODE,       MC.segment1||'.'||MC.segment2||'.'||MC.segment3 ,
+       XUEL.entitled_qty,
+       XUEL.CATEGORY_ID,
+       XUEH.UNIFORM_SET_ID,
+       RequisitionLineEO.CHARGABLE_QTY,
+       xuel.RENEWEL_QTY,
+       xuel.LIFE_EXPECTANCY,       --NVL(XX_UMS_ELIGIBLE_QTY_F(XURH.person_id,XUEL.life_expectancy,XUEL.entitled_qty),0) ,
+       RequisitionLineEO.REQUESTED_QTY,
+       XUEL.INVENTORY_ORGANIZATION_ID,
+RequisitionLineEO.RETURNED_QTY,
+RequisitionLineEO.DAMAGE_QTY,
+RequisitionLineEO.RETURN_ITEM_ID,
+MSI.description,
+MSI.primary_unit_of_measure*/
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll" />
+   </DesignTime>
+   <EntityUsage
+      Name="RequisitionLineEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.schema.server.RequisitionLineEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="RequisitionLineId"
+      EntityAttrName="RequisitionLineId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REQUISITION_LINE_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionHeaderId"
+      EntityAttrName="RequisitionHeaderId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REQUISITION_HEADER_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetLineId"
+      EntityAttrName="UniformSetLineId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="UNIFORM_SET_LINE_ID" >
+   </ViewAttribute>
+    <ViewAttribute
+      Name="LineNumber"
+      EntityAttrName="LineNumber"
+      EntityUsage="RequisitionLineEO"
+      AliasName="LineNumber"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="InventoryItemId"
+      EntityAttrName="InventoryItemId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="INVENTORY_ITEM_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="NeedByDate"
+      EntityAttrName="NeedByDate"
+      EntityUsage="RequisitionLineEO"
+      AliasName="NEED_BY_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      EntityAttrName="Remarks"
+      EntityUsage="RequisitionLineEO"
+      AliasName="Remarks" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ItemCategory"
+      IsPersistent="false"
+      Precision="122"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="ITEM_CATEGORY"
+      Expression="ITEM_CATEGORY"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="122" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EntitledQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="ENTITLED_QTY"
+      Expression="ENTITLED_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CategoryId"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="CATEGORY_ID"
+      Expression="CATEGORY_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Uniformsetid"
+      IsPersistent="false"
+      IsNotNull="true"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="UNIFORMSETID"
+      Expression="UNIFORMSETID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RenewelQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="RENEWEL_QTY"
+      Expression="RENEWEL_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LifeExpectancy"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="LIFE_EXPECTANCY"
+      Expression="LIFE_EXPECTANCY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="EligibleRenewalQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="VARCHAR2"
+      AliasName="ELIGIBLE_RENEWAL_QTY"
+      Expression="ELIGIBLE_RENEWAL_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequestedQty"
+      EntityAttrName="RequestedQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REQUESTED_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DamageQty"
+      EntityAttrName="DamageQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="DAMAGE_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ChargableQty"
+      EntityAttrName="ChargableQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="CHARGABLE_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReturnedQty"
+      EntityAttrName="ReturnedQty"
+      EntityUsage="RequisitionLineEO"
+      AliasName="RETURNED_QTY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReasonCode"
+      EntityAttrName="ReasonCode"
+      EntityUsage="RequisitionLineEO"
+      AliasName="REASON_CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReturnItemId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="RETURN_ITEM_ID"
+      Expression="RETURN_ITEM_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationId"
+      EntityAttrName="OrganizationId"
+      EntityUsage="RequisitionLineEO"
+      AliasName="ORGANIZATION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OnHandQty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="ON_HAND_QTY"
+      Expression="ON_HAND_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Itemdescription"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="ITEMDESCRIPTION"
+      Expression="ITEMDESCRIPTION"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Uom"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="UOM"
+      Expression="UOM"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReplacementItemId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="$none$"
+      AliasName="ReplacementItemId"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="tempForItemNo"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ReplacementItemForItem"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="tempForSelection"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="t1"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="t2"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RenewalTempForSelection"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ECRTempForSelection"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+</ViewObject>

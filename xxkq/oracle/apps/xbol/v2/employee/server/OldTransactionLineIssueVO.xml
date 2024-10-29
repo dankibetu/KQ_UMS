@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="OldTransactionLineIssueVO"
+   BindingStyle="Oracle"
+   CustomQuery="true"
+   RowClass="xxkq.oracle.apps.xbol.v2.employee.server.OldTransactionLineIssueVORowImpl"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.OldTransactionLineIssueVOImpl"
+   MsgBundleClass="oracle.jbo.common.JboResourceBundle"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select        TransactionLineIssueEO.TRANSACTION_ID, 
+        TransactionLineIssueEO.TRANSACTION_QTY as IssuedQuantity, 
+        TransactionLineIssueEO.CHARGED_QTY, 
+        TransactionLineIssueEO.AMOUNT_CHARGED, 
+        TransactionLineIssueEO.REMARKS, 
+        TransactionLineIssueEO.TRANSACTION_DATE as IssuedDate,
+        TransactionLineIssueEO.unit_price,
+        TransactionLineIssueEO.organization_id,
+        TransactionLineIssueEO.subinventory,
+        TransactionLineIssueEO.locator_id,
+TransactionLineIssueEO.transaction_header_id,
+        xurl.LINE_NUMBER,
+        msi.segment1 item_code,
+        msi.description,
+    msi.inventory_item_id,
+        msi.primary_unit_of_measure,
+        xurl.requested_qty,
+        NVL((SELECT SUM(xutl1.transaction_qty) return_qty
+         FROM   XX_UMS_TRANSACTION_HEADER_V2 xuth1,
+                XX_UMS_TRANSACTION_LINE_V2 xutl1,
+                XX_UMS_REQUISITION_HEADER_V2 xurh1,
+                XX_UMS_REQUISITION_LINE_V2 xurl1
+        WHERE xuth1.transaction_header_id=xutl1.transaction_header_id
+        AND xutl1.requisition_line_id=xurl1.requisition_line_id
+        AND xutl1.uniform_set_line_id=xurl1.uniform_set_line_id
+        AND xurl1.requisition_header_id=xurh1.requisition_header_id
+        AND xurh1.requisition_header_id=xuth1.requisition_header_id
+        AND xuth1.transaction_type='R'
+        AND xurh1.requisition_header_id=xurh.requisition_header_id
+        AND xurl1.requisition_line_id=xurl.requisition_line_id),0) Total_Qty_Returned,
+        NVL((SELECT SUM(xutl2   .transaction_qty) issue_qty
+           FROM XX_UMS_TRANSACTION_HEADER_V2 xuth2,
+                XX_UMS_TRANSACTION_LINE_V2 xutl2,
+                XX_UMS_REQUISITION_HEADER_V2 xurh2,
+                XX_UMS_REQUISITION_LINE_V2 xurl2
+           WHERE xuth2.transaction_header_id=xutl2.transaction_header_id
+           AND xutl2.requisition_line_id=xurl2.requisition_line_id
+           AND xutl2.uniform_set_line_id=xurl2.uniform_set_line_id
+           AND xurl2.requisition_header_id=xurh2.requisition_header_id
+           AND xurh2.requisition_header_id=xuth2.requisition_header_id
+           AND xuth2.transaction_type='I'
+           AND xurh2.requisition_header_id=xurh.requisition_header_id
+           AND xurl2.requisition_line_id=xurl.requisition_line_id
+                ),0) as totalissuedqty,
+        xurl.REQUESTED_QTY-(SELECT SUM(xutl2   .transaction_qty) issue_qty
+           FROM XX_UMS_TRANSACTION_HEADER_V2 xuth2,
+                XX_UMS_TRANSACTION_LINE_V2 xutl2,
+                XX_UMS_REQUISITION_HEADER_V2 xurh2,
+                XX_UMS_REQUISITION_LINE_V2 xurl2
+           WHERE xuth2.transaction_header_id=xutl2.transaction_header_id
+           AND xutl2.requisition_line_id=xurl2.requisition_line_id
+           AND xutl2.uniform_set_line_id=xurl2.uniform_set_line_id
+           AND xurl2.requisition_header_id=xurh2.requisition_header_id
+           AND xurh2.requisition_header_id=xuth2.requisition_header_id
+           AND xuth2.transaction_type='I'
+           AND xurh2.requisition_header_id=xurh.requisition_header_id
+           AND xurl2.requisition_line_id=xurl.requisition_line_id) as QuantityPending,                
+        mc.segment1||'.'||mc.segment2||'.'||mc.segment3 item_category,
+        moh.transaction_quantity onhand_quantity,
+TransactionLineIssueEO.category_id
+from    xx_ums_transaction_line_v2 TransactionLineIssueEO,xx_ums_requisition_header_v2 xurh,
+        xx_ums_requisition_line_v2 xurl,
+        xx_ums_entitlement_header_v2 xueh,
+        xx_ums_transaction_header_v2 xuth,
+        mtl_system_items msi,
+        mtl_item_categories mic,
+        mtl_categories mc,
+        org_organization_definitions ood,
+        mtl_secondary_inventories_fk_v msinv,
+        mtl_item_locations mil,
+        mtl_onhand_quantities moh
+where   xurh.uniform_set_id = xueh.uniform_set_id   
+and     xurh.uniform_set_id = xuth.uniform_set_id
+and     xurh.requisition_header_id = xuth.requisition_header_id
+and     xuth.transaction_header_id=TransactionLineIssueEO.transaction_header_id
+and     TransactionLineIssueEO.inventory_item_id=msi.inventory_item_id
+and     TransactionLineIssueEO.organization_id=msi.organization_id
+and     xurh.requisition_header_id=xurl.requisition_header_id
+and     msi.inventory_item_id=mic.inventory_item_id
+and     msi.organization_id=mic.organization_id
+and     mic.category_id=mc.category_id
+and     msi.organization_id=ood.organization_id
+and     msi.organization_id=msinv.organization_id
+and     msinv.status_code='Active'
+and     msinv.secondary_inventory_name=mil.subinventory_code
+and     mil.organization_id=msi.organization_id
+and     msi.inventory_item_id=moh.inventory_item_id
+and     msi.organization_id=moh.organization_id
+and     mil.inventory_location_id=moh.locator_id
+and     msinv.secondary_inventory_name=moh.subinventory_code
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.3.12.53" />
+      <Attr Name="_CodeGenFlagNew" Value="36" />
+   </DesignTime>
+   <EntityUsage
+      Name="TransactionLineIssueEO"
+      Entity="xxkq.oracle.apps.xbol.v2.employee.sechma.server.OldTransactionLineIssueEO" >
+      <DesignTime>
+         <Attr Name="_EntireObjectTable" Value="false" />
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="TransactionId"
+      IsNotNull="true"
+      EntityAttrName="TransactionId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TRANSACTION_ID"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionQty"
+      EntityAttrName="TransactionQty"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TransactionQty"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ChargedQty"
+      EntityAttrName="ChargedQty"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="ChargedQty"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AmountCharged"
+      EntityAttrName="AmountCharged"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="AmountCharged"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Remarks"
+      EntityAttrName="Remarks"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="Remarks"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionDate"
+      EntityAttrName="TransactionDate"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TransactionDate"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UnitPrice"
+      EntityAttrName="UnitPrice"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="UnitPrice"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationId"
+      EntityAttrName="OrganizationId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="OrganizationId"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Subinventory"
+      EntityAttrName="Subinventory"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="Subinventory"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LocatorId"
+      EntityAttrName="LocatorId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="LocatorId"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionHeaderId"
+      EntityAttrName="TransactionHeaderId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TransactionHeaderId"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransactionLineNumber"
+      EntityAttrName="TransactionLineNumber"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="TransactionLineNumber"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ItemCode"
+      IsPersistent="false"
+      Precision="40"
+      Type="java.lang.String"
+      AliasName="ITEM_CODE"
+      ColumnType="VARCHAR2"
+      Expression="ITEM_CODE"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Description"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      AliasName="DESCRIPTION"
+      ColumnType="VARCHAR2"
+      Expression="DESCRIPTION"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="InventoryItemId"
+      EntityAttrName="InventoryItemId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="InventoryItemId"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PrimaryUnitOfMeasure"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      AliasName="PRIMARY_UNIT_OF_MEASURE"
+      ColumnType="VARCHAR2"
+      Expression="PRIMARY_UNIT_OF_MEASURE"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequestedQty"
+      IsPersistent="false"
+      Precision="25"
+      Type="oracle.jbo.domain.Number"
+      AliasName="REQUESTED_QTY"
+      ColumnType="VARCHAR2"
+      Expression="REQUESTED_QTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TotalQtyReturned"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="TOTAL_QTY_RETURNED"
+      ColumnType="VARCHAR2"
+      Expression="TOTAL_QTY_RETURNED"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Totalissuedqty"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="TOTALISSUEDQTY"
+      ColumnType="VARCHAR2"
+      Expression="TOTALISSUEDQTY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Quantitypending"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="QUANTITYPENDING"
+      ColumnType="VARCHAR2"
+      Expression="QUANTITYPENDING"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ItemCategory"
+      IsPersistent="false"
+      Precision="122"
+      Type="java.lang.String"
+      AliasName="ITEM_CATEGORY"
+      ColumnType="VARCHAR2"
+      Expression="ITEM_CATEGORY"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="122" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OrganizationIDTransientIssue"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LocatoerIDTransientIssue"
+      IsPersistent="false"
+      Precision="255"
+      Type="java.lang.String"
+      AliasName="VIEW_ATTR"
+      Passivate="true"
+      ColumnType="VARCHAR2"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OnhandQuantity"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="122"
+      Type="oracle.jbo.domain.Number"
+      AliasName="ONHAND_QUANTITY"
+      ColumnType="VARCHAR2"
+      Expression="ONHAND_QUANTITY"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CategoryId"
+      EntityAttrName="CategoryId"
+      EntityUsage="TransactionLineIssueEO"
+      AliasName="CategoryId"
+      ColumnType="VARCHAR2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequisitionLineId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="REQUISITION_LINE_ID"
+      ColumnType="VARCHAR2"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="UniformSetLineId"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      AliasName="UNIFORM_SET_LINE_ID"
+      ColumnType="VARCHAR2"
+      SQLType="NUMERIC" >
+   </ViewAttribute>
+</ViewObject>

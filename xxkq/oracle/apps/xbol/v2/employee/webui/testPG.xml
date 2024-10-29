@@ -1,0 +1,72 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="9.0.3.8.11_1183" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="region1" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.UmsV2AM" windowTitle="AAAAAAAAAAAAAAAA" title="Replacement Requisition" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.MyCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:messageComponentLayout id="RequisitionHeaderVO1" columns="3" rows="4">
+               <ui:contents>
+                  <oa:messageLovInput id="EmployeeId" dataType="NUMBER" prompt="Employee Number" viewName="RequisitionHeaderVO1" viewAttr="EmployeeId" maximumLength="10">
+                     <lovContents>
+                        <oa:listOfValues id="region2"/>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap1"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageTextInput id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="RequisitionHeaderVO1" viewAttr="UniformSetName" maximumLength="100"/>
+                  <oa:messageTextInput id="RequisitionNumber" dataType="VARCHAR2" prompt="Requisition Number" viewName="RequisitionHeaderVO1" viewAttr="RequisitionNumber" maximumLength="100"/>
+                  <oa:messageTextInput id="ContactNumber" dataType="VARCHAR2" prompt="Contact Number" viewName="RequisitionHeaderVO1" viewAttr="ContactNumber" maximumLength="100"/>
+                  <oa:messageTextInput id="EmployeeName" dataType="VARCHAR2" prompt="Employee Name" viewName="RequisitionHeaderVO1" viewAttr="EmployeeName" maximumLength="301"/>
+                  <oa:messageTextInput id="PreparerName" dataType="VARCHAR2" prompt="Preparer Name" viewName="RequisitionHeaderVO1" viewAttr="PreparerName" maximumLength="301"/>
+                  <oa:messageTextInput id="RequisitionType" dataType="VARCHAR2" prompt="Requisition Type" viewName="RequisitionHeaderVO1" viewAttr="RequisitionType" maximumLength="50"/>
+                  <oa:messageTextInput id="Approver" dataType="VARCHAR2" prompt="Approver" viewName="RequisitionHeaderVO1" viewAttr="Approver" maximumLength="100" rendered="true"/>
+                  <oa:messageTextInput id="Status" dataType="VARCHAR2" prompt="Status" viewName="RequisitionHeaderVO1" viewAttr="Status" maximumLength="250"/>
+                  <oa:messageTextInput id="RequisitionDate" dataType="DATE" prompt="Requisition Date" viewName="RequisitionHeaderVO1" viewAttr="RequisitionDate"/>
+                  <oa:messageTextInput id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="RequisitionHeaderVO1" viewAttr="Remarks" maximumLength="1999"/>
+               </ui:contents>
+            </oa:messageComponentLayout>
+            <oa:spacer id="item1" height="10"/>
+            <oa:table id="RequisitionLineVO1" text="Item Details">
+               <ui:contents>
+                  <oa:messageTextInput id="SrNo" dataType="NUMBER" prompt="Sr No." viewName="RequisitionLineVO1" viewAttr="SrNo"/>
+                  <oa:messageTextInput id="ItemCategory" dataType="VARCHAR2" prompt="Item Category" viewName="RequisitionLineVO1" viewAttr="ItemCategory" maximumLength="122"/>
+                  <oa:messageTextInput id="ItemCode" dataType="NUMBER" prompt="Item Code" viewName="RequisitionLineVO1" viewAttr="ItemCode"/>
+                  <oa:messageTextInput id="ItemDescription" dataType="VARCHAR2" prompt="Item Description" viewName="RequisitionLineVO1" viewAttr="ItemDescription" maximumLength="240"/>
+                  <oa:messageTextInput id="Uom" dataType="NUMBER" prompt="UOM" viewName="RequisitionLineVO1" viewAttr="Uom"/>
+                  <oa:messageTextInput id="QuantityWithEmplyee" dataType="NUMBER" prompt="Quantity With Emplyee" viewName="RequisitionLineVO1" viewAttr="QuantityWithEmplyee" rendered="true"/>
+                  <oa:messageTextInput id="DamageQty" dataType="NUMBER" prompt="Damage Quantity" viewName="RequisitionLineVO1" viewAttr="DamageQty" rendered="true"/>
+                  <oa:messageTextInput id="ChargableQty" dataType="NUMBER" prompt="Chargable Quantity" viewName="RequisitionLineVO1" viewAttr="ChargableQty" rendered="true"/>
+                  <oa:messageTextInput id="ReasonCode" dataType="VARCHAR2" prompt="Reason Code" viewName="RequisitionLineVO1" viewAttr="ReasonCode" maximumLength="20" rendered="true"/>
+                  <oa:messageTextInput id="ReplacementItemId" dataType="NUMBER" prompt="Replacement Item" viewName="RequisitionLineVO1" viewAttr="ReplacementItemId" rendered="true"/>
+                  <oa:messageTextInput id="RequestedQty" dataType="NUMBER" prompt="Requested Qty" viewName="RequisitionLineVO1" viewAttr="RequestedQty" rendered="true"/>
+                  <oa:messageTextInput id="QuantityCharged" dataType="NUMBER" prompt="Quantity Charged" viewName="RequisitionLineVO1" viewAttr="QuantityCharged" rendered="true"/>
+                  <oa:messageTextInput id="EntitledRenewalQuantity" dataType="NUMBER" prompt="Entitled Renewal Quantity" viewName="RequisitionLineVO1" viewAttr="EntitledRenewalQuantity" rendered="false"/>
+                  <oa:messageTextInput id="RenewalPeriod" dataType="VARCHAR2" prompt="Renewal Period" viewName="RequisitionLineVO1" viewAttr="RenewalPeriod" rendered="false"/>
+                  <oa:messageTextInput id="EligibleRenewalQuantity" dataType="NUMBER" prompt="Eligible Renewal Quantity" viewName="RequisitionLineVO1" viewAttr="EligibleRenewalQuantity" rendered="false"/>
+                  <oa:messageTextInput id="RequestedQuantity" dataType="VARCHAR2" prompt="Requested Quantity" viewName="RequisitionLineVO1" viewAttr="RequestedQuantity" rendered="false"/>
+                  <oa:messageTextInput id="EntitledQuantity" dataType="VARCHAR2" prompt="Entitled Quantity" viewName="RequisitionLineVO1" viewAttr="EntitledQuantity" rendered="false"/>
+                  <oa:messageTextInput id="NeedByDate" dataType="DATE" prompt="Need By Date" viewName="RequisitionLineVO1" viewAttr="NeedByDate"/>
+                  <oa:messageTextInput id="Remarks1" dataType="VARCHAR2" prompt="Remarks" viewName="RequisitionLineVO1" viewAttr="Remarks" maximumLength="1999"/>
+                  <oa:messageTextInput id="Status1" dataType="VARCHAR2" prompt="Status" viewName="RequisitionLineVO1" viewAttr="Status" maximumLength="10" rendered="false"/>
+                  <oa:messageTextInput id="ReturnedQuantity" dataType="NUMBER" prompt="Returned Quantity" viewName="RequisitionLineVO1" viewAttr="ReturnedQuantity" rendered="false"/>
+               </ui:contents>
+               <ui:tableSelection>
+                  <oa:multipleSelection id="multipleSelection1" viewName="TempVO1" viewAttr="LookupCode"/>
+               </ui:tableSelection>
+            </oa:table>
+            <oa:pageButtonBar id="region3">
+               <ui:contents>
+                  <oa:button id="Clear" text="Clear" prompt="Clear"/>
+                  <oa:button id="Submit" text="Submit" prompt="Submit"/>
+                  <oa:button id="Cancel" text="Cancel" prompt="Cancel"/>
+                  <oa:button id="Save" text="Save" prompt="Save"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

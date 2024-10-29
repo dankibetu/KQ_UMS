@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="UmsV2AM"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.UmsV2AMImpl"
+   LoadComponentsLazily="true" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="9.0.3.12.66" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="GenderPoplistVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.poplist.server.GenderPoplistVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionHeaderVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionHeaderVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TempVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.poplist.server.TempVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionSearchVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSearchVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionSummaryVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSummaryVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionSummaryLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionSummaryLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionSummaryHeaderVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionSummaryHeaderVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionSummaryLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionSummaryLineVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionSearchVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.TransactionSearchVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EntitlementHeaderVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementHeaderVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EntitlementLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementLineVO" >
+   </ViewUsage>
+</AppModule>

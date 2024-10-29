@@ -1,0 +1,288 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.RequisitionAM" title="Requisition" windowTitle="Requisition" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.RequisitionCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:messageComponentLayout id="RequisitionVO1" rows="3" columns="4">
+               <ui:contents>
+                  <oa:messageLovInput id="EmployeeNumber" dataType="VARCHAR2" prompt="Employee Number" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/lov/webui/PersonIdLOVRN" queryable="false" required="yes">
+                     <lovMappings>
+                        <lovMap id="lovMap1" lovItem="EmployeeId" resultTo="EmployeeNumber" criteriaFrom="EmployeeNumber"/>
+                        <lovMap id="lovMap3" lovItem="EmployeeName" resultTo="EmployeeName" criteriaFrom="EmployeeName"/>
+                        <lovMap id="lovMap5" lovItem="ApproverItem" resultTo="Approver" criteriaFrom="Approver"/>
+                        <lovMap id="lovMap7" lovItem="uniformsetname" resultTo="UniformSetName" criteriaFrom="UniformSetName"/>
+                        <lovMap id="lovMap9" lovItem="UniformsetIdFormValue" resultTo="UniformSetIdFormField" criteriaFrom="UniformSetIdFormField"/>
+                        <lovMap id="lovMap96" lovItem="BusinessGroupIdLovFormValue" resultTo="BusinessGroupIdFormValue" criteriaFrom="BusinessGroupIdFormValue"/>
+                        <lovMap id="lovMap108" lovItem="PersonIdLOVFormValue" resultTo="PersonIdFormValue" criteriaFrom="PersonIdFormValue"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageLovInput id="EmployeeName" dataType="VARCHAR2" prompt="Employee Name" viewName="TrialVO1" viewAttr="EmployeeName" maximumLength="240" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/lov/webui/PersonIdLOVRN" required="yes">
+                     <lovMappings>
+                        <lovMap id="lovMap2" lovItem="EmployeeName" resultTo="EmployeeName" criteriaFrom="EmployeeName"/>
+                        <lovMap id="lovMap4" lovItem="EmployeeId" resultTo="EmployeeNumber" criteriaFrom="EmployeeNumber"/>
+                        <lovMap id="lovMap6" lovItem="ApproverItem" resultTo="Approver" criteriaFrom="Approver"/>
+                        <lovMap id="lovMap8" lovItem="uniformsetname" resultTo="UniformSetName" criteriaFrom="UniformSetName"/>
+                        <lovMap id="lovMap91" lovItem="UniformsetIdFormValue" resultTo="UniformSetIdFormField" criteriaFrom="UniformSetIdFormField"/>
+                        <lovMap id="lovMap109" lovItem="PersonIdLOVFormValue" resultTo="PersonIdFormValue" criteriaFrom="PersonIdFormValue"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageStyledText id="RequisitionStatus" dataType="VARCHAR2" prompt="Requisition Status" viewName="RequisitionHeaderVO1" viewAttr="RequisitionStatus" maximumLength="250" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="TrialVO1" viewAttr="UniformSetName" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="Preparer" dataType="VARCHAR2" prompt="Preparer" maximumLength="240" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="RequisitionCreationDate" dataType="DATE" prompt="Requisition Creation Date" viewName="RequisitionHeaderVO1" viewAttr="RequisitionCreationDate" styleClass="OraDataText"/>
+                  <oa:messageStyledText id="RequisitionNumber" dataType="VARCHAR2" prompt="Requisition Number" viewName="RequisitionHeaderVO1" viewAttr="RequisitionNumber" maximumLength="100" styleClass="OraDataText"/>
+                  <oa:messageChoice id="RequisitionType" dataType="VARCHAR2" prompt="Requisition Type" selectiveSearchCriteria="false" pickListViewDef="xxkq.oracle.apps.xbol.v2.employee.poplist.server.RequisitionTypePoplistVO" pickListDispAttr="Meaning" pickListValAttr="Code" pickListViewName="RequisitionTypePoplistVO1" viewName="RequisitionHeaderVO1" viewAttr="RequisitionType">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="requisitionTypeEvent"/>
+                     </ui:primaryClientAction>
+                  </oa:messageChoice>
+                  <oa:messageStyledText id="Approver" dataType="VARCHAR2" prompt="Approver" maximumLength="90" rendered="${oa.RequisitionLineTableVO1.ApproverHide}" viewName="TrialVO1" viewAttr="ApproverName" styleClass="OraDataText"/>
+                  <oa:messageChoice id="ReasonCode" viewName="RequisitionHeaderVO1" viewAttr="ReasonCode" pickListViewDef="xxkq.oracle.apps.xbol.v2.employee.poplist.server.HeaderReasonCodePoplistVO" pickListViewName="HeaderReasonCodePoplistVO1" pickListDispAttr="Meaning" pickListValAttr="Code" prompt="Reason Code" rendered="${oa.RequisitionLineTableVO1.ReasonCodeHide}" disabled="false" required="yes">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="reasoncodeEvent"/>
+                     </ui:primaryClientAction>
+                  </oa:messageChoice>
+                  <oa:messageTextInput id="ContactNumber" dataType="VARCHAR2" prompt="Contact Number" viewName="RequisitionHeaderVO1" viewAttr="ContactNumber" maximumLength="100"/>
+                  <oa:messageTextInput id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="RequisitionHeaderVO1" viewAttr="Remarks" maximumLength="1999"/>
+                  <oa:messageLayout id="messageLayout1">
+                     <ui:contents>
+                        <oa:formValue id="PreparerIdFormValue" viewName="RequisitionHeaderVO1" viewAttr="PreparerPersonId"/>
+                        <oa:formValue id="PersonIdFormValue" viewName="RequisitionHeaderVO1" viewAttr="PersonId"/>
+                     </ui:contents>
+                  </oa:messageLayout>
+                  <oa:messageLayout id="messageLayout2">
+                     <ui:contents>
+                        <oa:submitButton id="ReqApprovalBtn" text="Initial Req Approval Approval" prompt="Initial Req Approval Approval" disabled="true">
+                           <ui:primaryClientAction>
+                              <ui:firePartialAction event="ReqApprEvent"/>
+                           </ui:primaryClientAction>
+                        </oa:submitButton>
+                     </ui:contents>
+                  </oa:messageLayout>
+               </ui:contents>
+            </oa:messageComponentLayout>
+            <oa:pageButtonBar id="region1">
+               <ui:contents>
+                  <oa:button id="Clear" text="Clear" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/RequisitionPG" prompt="Clear" rendered="true" viewName="RequisitionLineTableVO1" viewAttr="ClearButton" disabled="${oa.RequisitionLineTableVO1.ClearButton}"/>
+                  <oa:submitButton id="Submit" text="Submit" prompt="Submit" disabled="${oa.RequisitionLineTableVO1.SubmitButton}" rendered="true" viewName="RequisitionLineTableVO1"/>
+                  <oa:submitButton id="Save" text="Approve" prompt="Approve" rendered="false" viewName="RequisitionLineTableVO1" disabled="${oa.RequisitionLineTableVO1.SaveButton}" dataType="BOOLEAN"/>
+                  <oa:submitButton id="Cancel" text="Cancel" prompt="Cancel" rendered="false" viewName="RequisitionLineTableVO1" disabled="${oa.RequisitionLineTableVO1.CancelButton}"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+            <oa:spacer id="Spacer" height="30"/>
+            <oa:table id="RequisitionInitialTableRN" text="Item Details" rendered="${oa.RequisitionLineTableVO1.Initial}" width="100%" blockSize="100">
+               <ui:contents>
+                  <oa:messageStyledText id="LineNumber" dataType="NUMBER" prompt="Sr.No" viewName="RequisitionLineVO1" viewAttr="LineNumber" rendered="true" initSortSeq="none" queryable="false" sortState="no"/>
+                  <oa:messageStyledText id="ItemCategory" dataType="VARCHAR2" prompt="Item Category" viewName="RequisitionLineVO1" viewAttr="ItemCategory" maximumLength="122"/>
+                  <oa:messageLovInput id="ItemNo" dataType="VARCHAR2" prompt="Item Code" maximumLength="40" queryable="true" viewName="RequisitionLineVO1" viewAttr="tempForItemNo">
+                     <lovContents>
+                        <oa:listOfValues id="ItemNoLovRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLOVAM">
+                           <ui:contents>
+                              <oa:table name="ItemNoLovRN" id="ItemCodeLineLovVO1">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="ItemNoLOVItem" dataType="VARCHAR2" prompt="Item Code" viewName="ItemCodeLineLovVO1" viewAttr="ItemNo" maximumLength="40" queryable="true"/>
+                                    <oa:messageStyledText id="ItemDescriptionLOVItem" dataType="VARCHAR2" prompt="Item Description" viewName="ItemCodeLineLovVO1" viewAttr="ItemDescription" maximumLength="240" queryable="false"/>
+                                    <oa:messageStyledText id="UomLOVItem" dataType="VARCHAR2" prompt="UOM" viewName="ItemCodeLineLovVO1" viewAttr="Uom" maximumLength="25" queryable="false"/>
+                                    <oa:formValue id="ItemCategoryLOVFormValue" viewName="ItemCodeLineLovVO1" viewAttr="CategoryId"/>
+                                    <oa:formValue id="ItemIdLOVFormValue" viewName="ItemCodeLineLovVO1" viewAttr="ItemId"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap92" lovItem="ItemNoLOVItem" resultTo="ItemNo" criteriaFrom="ItemNo"/>
+                        <lovMap id="lovMap93" lovItem="ItemDescriptionLOVItem" resultTo="ItemDescription" criteriaFrom="ItemDescription"/>
+                        <lovMap id="lovMap94" lovItem="UomLOVItem" resultTo="Uom" criteriaFrom="Uom"/>
+                        <lovMap id="lovMap95" lovItem="ItemCategoryLOVFormValue" criteriaFrom="ItemCategoryFormValue"/>
+                        <lovMap id="lovMap106" lovItem="ItemIdLOVFormValue" resultTo="InventoryItemFomValue" criteriaFrom="InventoryItemFomValue"/>
+                        <lovMap id="lovMap114" lovItem="ItemDescriptionLOVItem" resultTo="itemdescInitial"/>
+                        <lovMap id="lovMap115" lovItem="UomLOVItem" resultTo="UnitOfMeasureInitial"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageStyledText id="ItemDescription" dataType="VARCHAR2" prompt="Item Description" maximumLength="240" viewName="RequisitionLineVO1" viewAttr="Itemdescription"/>
+                  <oa:messageStyledText id="Uom" dataType="VARCHAR2" prompt="UOM" maximumLength="25" viewName="RequisitionLineVO1" viewAttr="Uom"/>
+                  <oa:messageStyledText id="EntitledQty" dataType="NUMBER" prompt="Entitled Quantity" viewName="RequisitionLineVO1" viewAttr="EntitledQty"/>
+                  <oa:messageTextInput id="NeedByDate" dataType="DATE" prompt="Need By Date" viewName="RequisitionLineVO1" viewAttr="NeedByDate"/>
+                  <oa:messageTextInput id="Remarks1" dataType="VARCHAR2" prompt="Remarks" viewName="RequisitionLineVO1" viewAttr="Remarks" maximumLength="1999"/>
+                  <oa:formValue id="ItemCategoryFormValue" viewName="RequisitionLineVO1" viewAttr="CategoryId"/>
+                  <oa:formValue id="InventoryItemFomValue" viewName="RequisitionLineVO1" viewAttr="InventoryItemId" dataType="NUMBER"/>
+                  <oa:formValue id="itemdescInitial" viewName="RequisitionLineVO1" viewAttr="Itemdescription"/>
+                  <oa:formValue id="UnitOfMeasureInitial" viewName="RequisitionLineVO1" viewAttr="Uom"/>
+               </ui:contents>
+            </oa:table>
+            <oa:table id="RequisitionRenewalTableRN" text="Item Details" rendered="${oa.RequisitionLineTableVO1.Renewal}" width="100%" blockSize="100">
+               <ui:contents>
+                  <oa:messageStyledText id="LineNumber3" dataType="NUMBER" prompt="Sr.No" viewName="RenewalLineVO1" viewAttr="LineNumber" rendered="true"/>
+                  <oa:messageStyledText id="ItemCategory3" dataType="VARCHAR2" prompt="Item Category" viewName="RenewalLineVO1" viewAttr="ItemCategory" maximumLength="122"/>
+                  <oa:messageLovInput id="ItemNo3" dataType="VARCHAR2" prompt="Item Code" viewName="RenewalLineVO1" maximumLength="40" queryable="false" viewAttr="tempForItemNo">
+                     <lovContents>
+                        <oa:listOfValues id="region2" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLOVAM">
+                           <ui:contents>
+                              <oa:table name="region2" id="ItemCodeLineLovVO11">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="ItemNo1LovItem" dataType="VARCHAR2" prompt="Item No" viewName="ItemCodeLineLovVO1" viewAttr="ItemNo" maximumLength="40" queryable="true"/>
+                                    <oa:messageStyledText id="ItemDescription1LovItem" dataType="VARCHAR2" prompt="Item Description" viewName="ItemCodeLineLovVO1" viewAttr="ItemDescription" maximumLength="240" queryable="false"/>
+                                    <oa:messageStyledText id="Uom1LovItem" dataType="VARCHAR2" prompt="Uom" viewName="ItemCodeLineLovVO1" viewAttr="Uom" maximumLength="25" queryable="false"/>
+                                    <oa:formValue id="ItemCategoryLOVFormValue3" viewName="ItemCodeLineLovVO1" viewAttr="CategoryId"/>
+                                    <oa:formValue id="itemIdLOVFormValue1" viewName="ItemCodeLineLovVO1" viewAttr="ItemId"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap97" lovItem="ItemNo1LovItem" resultTo="ItemNo3" criteriaFrom="ItemNo3"/>
+                        <lovMap id="lovMap98" lovItem="ItemDescription1LovItem" resultTo="ItemDescription3" criteriaFrom="ItemDescription3"/>
+                        <lovMap id="lovMap99" lovItem="Uom1LovItem" resultTo="Uom3" criteriaFrom="Uom3"/>
+                        <lovMap id="lovMap104" lovItem="ItemCategoryLOVFormValue3" criteriaFrom="ItemCategoryFormValue1"/>
+                        <lovMap id="lovMap107" lovItem="itemIdLOVFormValue1" criteriaFrom="inventoryItemFormValue1" resultTo="inventoryItemFormValue1"/>
+                        <lovMap id="lovMap116" lovItem="ItemDescription1LovItem" resultTo="itemdescripRenewal"/>
+                        <lovMap id="lovMap117" lovItem="Uom1LovItem" resultTo="UnitOfMeasRenewal"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageStyledText id="ItemDescription3" dataType="VARCHAR2" prompt="Item Description" maximumLength="240" viewName="RenewalLineVO1" viewAttr="Itemdescription"/>
+                  <oa:messageStyledText id="Uom3" dataType="VARCHAR2" prompt="UOM" maximumLength="25" viewName="RenewalLineVO1" viewAttr="Uom"/>
+                  <oa:messageStyledText id="EntitledRenewalQty3" dataType="NUMBER" prompt="Entitled Renewal Quantity" viewName="RenewalLineVO1" viewAttr="RenewelQty"/>
+                  <oa:messageStyledText id="RenewalPeriod3" dataType="NUMBER" prompt="Renewal Period" viewName="RenewalLineVO1" viewAttr="LifeExpectancy"/>
+                  <oa:messageStyledText id="RequestedQty3" dataType="NUMBER" prompt="Requested Quantity" viewName="RenewalLineVO1" viewAttr="RenewelQty"/>
+                  <oa:messageTextInput id="NeedByDate3" dataType="DATE" prompt="Need By Date" viewName="RenewalLineVO1" viewAttr="NeedByDate"/>
+                  <oa:messageTextInput id="Remarks13" dataType="VARCHAR2" prompt="Remarks" viewName="RenewalLineVO1" viewAttr="Remarks" maximumLength="1999"/>
+                  <oa:formValue id="ItemCategoryFormValue1" viewName="RenewalLineVO1" viewAttr="CategoryId"/>
+                  <oa:formValue id="inventoryItemFormValue1" viewName="RenewalLineVO1" viewAttr="InventoryItemId"/>
+                  <oa:formValue id="itemdescripRenewal" viewName="RenewalLineVO1" viewAttr="Itemdescription"/>
+                  <oa:formValue id="UnitOfMeasRenewal" viewName="RenewalLineVO1" viewAttr="Uom"/>
+               </ui:contents>
+               <ui:tableSelection>
+                  <oa:multipleSelection id="RenewalSelection" viewName="RenewalLineVO1" viewAttr="RenewalTempForSelection"/>
+               </ui:tableSelection>
+            </oa:table>
+            <oa:table id="RequisitionReplacementTableRN" text="Item Details" rendered="${oa.RequisitionLineTableVO1.Replacement}" blockSize="100">
+               <ui:contents>
+                  <oa:messageStyledText id="LineNumber2" dataType="NUMBER" prompt="Sr.No" viewName="ReplacementLineVO1" viewAttr="LineNumber" rendered="true"/>
+                  <oa:messageStyledText id="ItemCategory2" dataType="VARCHAR2" prompt="Item Category" viewName="ReplacementLineVO1" viewAttr="ItemCategory" maximumLength="122"/>
+                  <oa:messageStyledText id="itemcode" viewName="ReplacementLineVO1" viewAttr="Itemcode" prompt="Item Code"/>
+                  <oa:messageLovInput id="ItemNo2" dataType="VARCHAR2" prompt="Item Code" viewName="ReplacementLineVO1" viewAttr="tempForItemNo" maximumLength="40" queryable="false" unvalidated="false" rendered="false">
+                     <lovContents>
+                        <oa:listOfValues id="region3" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLOVAM">
+                           <ui:contents>
+                              <oa:table name="region3" id="ItemCodeLineLovVO12">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="ItemNo1" dataType="VARCHAR2" prompt="Item No" viewName="ItemCodeLineLovVO1" viewAttr="ItemNo" maximumLength="40" queryable="true"/>
+                                    <oa:messageStyledText id="ItemDescription1" dataType="VARCHAR2" prompt="Item Description" viewName="ItemCodeLineLovVO1" viewAttr="ItemDescription" maximumLength="240" queryable="false"/>
+                                    <oa:messageStyledText id="Uom1" dataType="VARCHAR2" prompt="Uom" viewName="ItemCodeLineLovVO1" viewAttr="Uom" maximumLength="25" queryable="false"/>
+                                    <oa:formValue id="ItemCategoryLOVFormValue2" viewName="ItemCodeLineLovVO1" viewAttr="CategoryId"/>
+                                    <oa:formValue id="ItemIdLovFormValue2" viewName="ItemCodeLineLovVO1" viewAttr="ItemId"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap100" lovItem="ItemNo1" resultTo="ItemNo2" criteriaFrom="ItemNo2"/>
+                        <lovMap id="lovMap101" lovItem="ItemDescription1" resultTo="ItemDescription2" criteriaFrom="ItemDescription2"/>
+                        <lovMap id="lovMap102" lovItem="Uom1" resultTo="Uom2" criteriaFrom="Uom2"/>
+                        <lovMap id="lovMap103" lovItem="ItemCategoryLOVFormValue2" criteriaFrom="ItemCategoryFormValue2"/>
+                        <lovMap id="lovMap110" lovItem="ItemIdLovFormValue2" resultTo="InventoryItemFormValue2" criteriaFrom="InventoryItemFormValue2"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:formValue id="ItemNoFormValue2" viewName="ReplacementLineVO1" viewAttr="InventoryItemId"/>
+                  <oa:messageStyledText id="ItemDescription2" dataType="VARCHAR2" prompt="Item Description" maximumLength="240" viewName="ReplacementLineVO1" viewAttr="Itemdescription"/>
+                  <oa:messageStyledText id="Uom2" dataType="VARCHAR2" prompt="UOM" maximumLength="25" viewName="ReplacementLineVO1" viewAttr="Uom"/>
+                  <oa:messageStyledText id="quantitywithemployee" prompt="Quantity With Employee" viewName="ReplacementLineVO1" viewAttr="SumXueoOnhandQty" dataType="NUMBER"/>
+                  <oa:messageTextInput id="DamageQty2" dataType="NUMBER" prompt="Replacement Quantity" viewName="ReplacementLineVO1" viewAttr="DamageQty">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction/>
+                     </ui:primaryClientAction>
+                  </oa:messageTextInput>
+                  <oa:messageTextInput id="ChargableQty2" dataType="NUMBER" prompt="Chargeable Quantity" viewName="ReplacementLineVO1" viewAttr="ChargableQty"/>
+                  <oa:messageChoice id="ReasonCode2" dataType="VARCHAR2" prompt="Reason Code" viewName="ReplacementLineVO1" viewAttr="ReasonCode" pickListViewDef="xxkq.oracle.apps.xbol.v2.employee.poplist.server.ReasonCodePoplistVO" pickListViewName="ReasonCodePoplistVO1" pickListDispAttr="Meaning" pickListValAttr="Code"/>
+                  <oa:messageLovInput id="ReplacementItemId2" dataType="VARCHAR2" prompt="Item" viewName="ReplacementLineVO1" viewAttr="ReplacementItemForItem" queryable="true" maximumLength="40">
+                     <lovContents>
+                        <oa:listOfValues id="ReplacementItemLOVRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLOVAM">
+                           <ui:contents>
+                              <oa:table name="ReplacementItemLOVRN" id="ItemCodeLineLovVO13">
+                                 <ui:contents>
+                                    <oa:formValue id="CategoryId" dataType="NUMBER" prompt="Category Id" viewName="ItemCodeLineLovVO1" viewAttr="CategoryId"/>
+                                    <oa:messageStyledText id="ItemCategory1" dataType="VARCHAR2" prompt="Item Category" viewName="ItemCodeLineLovVO1" viewAttr="ItemCategory" maximumLength="122" queryable="true"/>
+                                    <oa:messageStyledText id="item1" viewName="ItemCodeLineLovVO1" viewAttr="ItemNo" prompt="Item No"/>
+                                    <oa:formValue id="ItemId" dataType="NUMBER" prompt="Item Id" viewName="ItemCodeLineLovVO1" viewAttr="ItemId"/>
+                                    <oa:messageStyledText id="ItemDescription6" viewName="ItemCodeLineLovVO1" viewAttr="ItemDescription" prompt="Item Description"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap111" criteriaFrom="ReplacementItemId2" lovItem="ItemCategory1"/>
+                        <lovMap id="lovMap112" lovItem="CategoryId" criteriaFrom="ItemCategoryFormValue2"/>
+                        <lovMap id="lovMap113" lovItem="ItemId" resultTo="InventoryItemIdReplacementFormValue" criteriaFrom="InventoryItemIdReplacementFormValue"/>
+                        <lovMap id="lovMap118" lovItem="item1" resultTo="ReplacementItemId2" criteriaFrom="ReplacementItemId2"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageStyledText id="ReturnedQty2" dataType="NUMBER" prompt="Returned Quantity" viewName="ReplacementLineVO1" viewAttr="DamageQty" serverUnvalidated="true"/>
+                  <oa:messageStyledText id="RequestedQty2" dataType="NUMBER" prompt="Requested Quantity" viewName="ReplacementLineVO1" viewAttr="DamageQty"/>
+                  <oa:messageTextInput id="NeedByDate2" dataType="DATE" prompt="Need By Date" viewName="ReplacementLineVO1" viewAttr="NeedByDate"/>
+                  <oa:messageTextInput id="Remarks12" dataType="VARCHAR2" prompt="Remarks" viewName="ReplacementLineVO1" viewAttr="Remarks" maximumLength="1999"/>
+                  <oa:formValue id="ItemCategoryFormValue2" viewName="ReplacementLineVO1" viewAttr="CategoryId"/>
+                  <oa:formValue id="InventoryItemFormValue2" viewName="ReplacementLineVO1" viewAttr="InventoryItemId"/>
+                  <oa:formValue id="InventoryItemIdReplacementFormValue" viewName="ReplacementLineVO1" viewAttr="ReplacementItemId"/>
+               </ui:contents>
+               <ui:tableSelection>
+                  <oa:multipleSelection id="multipleSelection1" viewName="ReplacementLineVO1" viewAttr="tempForSelection"/>
+               </ui:tableSelection>
+            </oa:table>
+            <oa:table id="RequisitionECRtableRN" width="100%" text="Item Details" rendered="${oa.RequisitionLineTableVO1.ECR}" blockSize="100">
+               <ui:contents>
+                  <oa:messageStyledText id="LineNumberECR" dataType="NUMBER" prompt="Sr.No" viewName="EntitlementChangeReqLineVO1" viewAttr="LineNumber" rendered="true" initSortSeq="none" queryable="false" sortState="no"/>
+                  <oa:messageStyledText id="ItemCategoryECR" dataType="VARCHAR2" prompt="Item Category" viewName="EntitlementChangeReqLineVO1" viewAttr="ItemCategory" maximumLength="122"/>
+                  <oa:messageLovInput id="ItemNoECR" dataType="VARCHAR2" prompt="Item Code" maximumLength="40" queryable="true" viewName="EntitlementChangeReqLineVO1" viewAttr="tempForItemNo">
+                     <lovContents>
+                        <oa:listOfValues id="ItemNoLovRN1" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLOVAM">
+                           <ui:contents>
+                              <oa:table name="ItemNoLovRN1" id="ItemCodeLineLovVO14">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="ItemNoLOVItem1" dataType="VARCHAR2" prompt="Item Code" viewName="ItemCodeLineLovVO1" viewAttr="ItemNo" maximumLength="40" queryable="true"/>
+                                    <oa:messageStyledText id="ItemDescriptionLOVItem1" dataType="VARCHAR2" prompt="Item Description" viewName="ItemCodeLineLovVO1" viewAttr="ItemDescription" maximumLength="240" queryable="false"/>
+                                    <oa:messageStyledText id="UomLOVItem1" dataType="VARCHAR2" prompt="UOM" viewName="ItemCodeLineLovVO1" viewAttr="Uom" maximumLength="25" queryable="false"/>
+                                    <oa:formValue id="ItemCategoryLOVFormValue4" viewName="ItemCodeLineLovVO1" viewAttr="CategoryId"/>
+                                    <oa:formValue id="ItemIdLOVFormValue1" viewName="ItemCodeLineLovVO1" viewAttr="ItemId"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap921" lovItem="ItemNoLOVItem1" resultTo="ItemNoECR" criteriaFrom="ItemNoECR"/>
+                        <lovMap id="lovMap931" lovItem="ItemDescriptionLOVItem1" resultTo="ItemDescriptionECR" criteriaFrom="ItemDescriptionECR"/>
+                        <lovMap id="lovMap941" lovItem="UomLOVItem1" resultTo="UomECR" criteriaFrom="UomECR"/>
+                        <lovMap id="lovMap951" lovItem="ItemCategoryLOVFormValue4" criteriaFrom="ItemCategoryFormValueECR"/>
+                        <lovMap id="lovMap1061" lovItem="ItemIdLOVFormValue1" resultTo="InventoryItemFomValueECR" criteriaFrom="InventoryItemFomValueECR"/>
+                        <lovMap id="lovMap1141" lovItem="ItemDescriptionLOVItem1" resultTo="itemdescInitialECR"/>
+                        <lovMap id="lovMap1151" lovItem="UomLOVItem1" resultTo="UnitOfMeasureInitialECR"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageStyledText id="ItemDescriptionECR" dataType="VARCHAR2" prompt="Item Description" maximumLength="240" viewName="EntitlementChangeReqLineVO1" viewAttr="Itemdescription"/>
+                  <oa:messageStyledText id="UomECR" dataType="VARCHAR2" prompt="UOM" maximumLength="25" viewName="EntitlementChangeReqLineVO1" viewAttr="Uom"/>
+                  <oa:messageStyledText id="EntitledQtyECR" dataType="NUMBER" prompt="Entitled Quantity" viewName="EntitlementChangeReqLineVO1" viewAttr="EntitledQty"/>
+                  <oa:messageTextInput id="NeedByDateECR" dataType="DATE" prompt="Need By Date" viewName="EntitlementChangeReqLineVO1" viewAttr="NeedByDate"/>
+                  <oa:messageTextInput id="RemarksECR" dataType="VARCHAR2" prompt="Remarks" viewName="EntitlementChangeReqLineVO1" viewAttr="Remarks" maximumLength="1999"/>
+                  <oa:formValue id="ItemCategoryFormValueECR" viewName="EntitlementChangeReqLineVO1" viewAttr="CategoryId"/>
+                  <oa:formValue id="InventoryItemFomValueECR" viewName="EntitlementChangeReqLineVO1" viewAttr="InventoryItemId" dataType="NUMBER"/>
+                  <oa:formValue id="itemdescInitialECR" viewName="EntitlementChangeReqLineVO1" viewAttr="Itemdescription"/>
+                  <oa:formValue id="UnitOfMeasureInitialECR" viewName="EntitlementChangeReqLineVO1" viewAttr="Uom"/>
+               </ui:contents>
+               <ui:tableSelection>
+                  <oa:multipleSelection id="multipleSelectionECR" viewName="EntitlementChangeReqLineVO1" viewAttr="ECRTempForSelection"/>
+               </ui:tableSelection>
+            </oa:table>
+            <oa:formValue id="UniformSetIdFormField" viewName="RequisitionHeaderVO1" viewAttr="UniformSetId"/>
+            <oa:formValue id="BusinessGroupIdFormValue" viewName="RequisitionHeaderVO1" viewAttr="BusinessGroupId"/>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

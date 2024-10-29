@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.AirxpAM" windowTitle="Requisition Search Page" title="" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.RequisitionSearchCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:query id="QueryRN" mode="none">
+               <ui:contents>
+                  <oa:table id="TableRN" width="100%" text="Details">
+                     <ui:contents>
+                        <oa:messageStyledText id="Employeeid" dataType="VARCHAR2" prompt="Employee Number" viewName="RequisitionSearchVO1" viewAttr="Employeeid" maximumLength="10" queryable="true" userCustomizable="false"/>
+                        <oa:messageStyledText id="Employeename" dataType="VARCHAR2" prompt="Employee Name" viewName="RequisitionSearchVO1" viewAttr="Employeename" maximumLength="300" queryable="true"/>
+                        <oa:messageStyledText id="Requisitionnumber" dataType="VARCHAR2" prompt="Requisition Number" viewName="RequisitionSearchVO1" viewAttr="Requisitionnumber" maximumLength="100" queryable="true"/>
+                        <oa:messageStyledText id="Requisitiontype" dataType="VARCHAR2" prompt="Requisition Type" viewName="RequisitionSearchVO1" viewAttr="Requisitiontype" maximumLength="50" queryable="true"/>
+                        <oa:messageStyledText id="Requisitionstatus" dataType="VARCHAR2" prompt="Requisition Status" viewName="RequisitionSearchVO1" viewAttr="Requisitionstatus" maximumLength="250" queryable="true"/>
+                        <oa:messageStyledText id="Requisitiondate" dataType="DATE" prompt="Requisition Date" viewName="RequisitionSearchVO1" viewAttr="Requisitiondate" queryable="true"/>
+                        <oa:messageStyledText id="UniformSetName" queryable="true" prompt="Uniform Set Name" viewName="RequisitionSearchVO1" viewAttr="Uniformsetname"/>
+                        <oa:image id="Details" dataType="VARCHAR2" prompt="Requisition Details" viewName="RequisitionSearchVO1" viewAttr="Details" source="detailsicon_enabled.gif" imageHeight="24" imageWidth="24" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/RequisitionSummaryPG&amp;retainAM=Y&amp;empId={@Employeeid}&amp;ReqNo={@Requisitionnumber}"/>
+                     </ui:contents>
+                  </oa:table>
+               </ui:contents>
+               <oa:simpleSearchPanel>
+                  <oa:header text="Requisition Search" id="region2">
+                     <ui:contents>
+                        <oa:defaultDoubleColumn id="region1" headerDisabled="true">
+                           <ui:contents>
+                              <oa:messageLovInput id="HeaderEmployeeID" dataType="VARCHAR2" prompt="Employee Number" maximumLength="10" queryable="true" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/lov/webui/EmployeeLOVRN" styleClass="OraDataText" userCustomizable="false">
+                                 <lovMappings>
+                                    <lovMap id="lovMap1" lovItem="EmployeeNumber" resultTo="HeaderEmployeeID" criteriaFrom="HeaderEmployeeID"/>
+                                    <lovMap id="lovMap7" lovItem="FullName" resultTo="HeaderEmployeeName" criteriaFrom="HeaderEmployeeName"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="HeaderEmployeeName" dataType="VARCHAR2" prompt="Employee Name" maximumLength="300" queryable="true" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/lov/webui/EmployeeLOVRN" styleClass="OraDataText">
+                                 <lovMappings>
+                                    <lovMap id="lovMap2" lovItem="FullName" resultTo="HeaderEmployeeName" criteriaFrom="HeaderEmployeeName"/>
+                                    <lovMap id="lovMap8" lovItem="EmployeeNumber" resultTo="HeaderEmployeeID" criteriaFrom="HeaderEmployeeID"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="HeaderRequisitionNumber" dataType="VARCHAR2" prompt="Requisition Number" maximumLength="100" queryable="true" externalListOfValues="/xxkq/oracle/apps/xbol/v2/employee/lov/webui/RequisitionSearchLOVRN" styleClass="OraDataText">
+                                 <lovMappings>
+                                    <lovMap id="lovMap3" resultTo="HeaderRequisitionNumber" criteriaFrom="HeaderRequisitionNumber" lovItem="RequisitionNumber"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="HeaderRequisitionStatus" dataType="VARCHAR2" prompt="Requisition Status" maximumLength="250" queryable="true" styleClass="OraDataText">
+                                 <lovContents>
+                                    <oa:listOfValues id="region10" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.AirxpLovAM">
+                                       <ui:contents>
+                                          <oa:table name="region10" id="RequisitionStatusLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="Requisitionstatusheader" dataType="VARCHAR2" prompt="Requisition Status" viewName="RequisitionStatusLovVO1" viewAttr="Requisitionstatus" maximumLength="80" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap10" lovItem="Requisitionstatusheader" resultTo="HeaderRequisitionStatus" criteriaFrom="HeaderRequisitionStatus"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="HeaderRequisitionType" dataType="VARCHAR2" prompt="Requisition Type" queryable="true" styleClass="OraDataText">
+                                 <lovContents>
+                                    <oa:listOfValues id="region9" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.AirxpLovAM">
+                                       <ui:contents>
+                                          <oa:table name="region9" id="RequisitionTypePoplistVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="RequisitiontypeMeaning" dataType="VARCHAR2" prompt="Requisition Type" viewName="RequisitionTypeSearchPoplistVO1" viewAttr="Requisitiontype" maximumLength="80" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap9" lovItem="RequisitiontypeMeaning" resultTo="HeaderRequisitionType" criteriaFrom="HeaderRequisitionType"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageLovInput id="HeaderUniformSetName" queryable="true" prompt="Uniform Set Name" styleClass="OraDataText">
+                                 <lovContents>
+                                    <oa:listOfValues id="region8" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.AirxpLovAM">
+                                       <ui:contents>
+                                          <oa:table name="region8" id="UniformSetLovVO1">
+                                             <ui:contents>
+                                                <oa:messageStyledText id="UniformSetName1" dataType="VARCHAR2" prompt="Uniform Set Name" viewName="UniformSetLovVO1" viewAttr="UniformSetName" maximumLength="100" queryable="true"/>
+                                             </ui:contents>
+                                          </oa:table>
+                                       </ui:contents>
+                                    </oa:listOfValues>
+                                 </lovContents>
+                                 <lovMappings>
+                                    <lovMap id="lovMap6" lovItem="UniformSetName1" resultTo="HeaderUniformSetName" criteriaFrom="HeaderUniformSetName"/>
+                                 </lovMappings>
+                              </oa:messageLovInput>
+                              <oa:messageTextInput id="RequisitionFromDate" dataType="DATE" prompt="Requisition From Date" queryable="true" styleClass="OraDataText"/>
+                              <oa:messageTextInput id="RequisitionToDate" dataType="DATE" prompt="Requisition To Date" queryable="true" styleClass="OraDataText"/>
+                              <oa:submitButton id="SearchButton" text="Search" prompt="Search"/>
+                              <oa:button id="Clear" text="Clear" prompt="Clear" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/RequisitionSearchPG"/>
+                           </ui:contents>
+                        </oa:defaultDoubleColumn>
+                     </ui:contents>
+                  </oa:header>
+               </oa:simpleSearchPanel>
+            </oa:query>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

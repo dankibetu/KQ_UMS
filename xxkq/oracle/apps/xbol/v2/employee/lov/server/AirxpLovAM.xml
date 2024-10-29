@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="AirxpLovAM"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.lov.server.AirxpLovAMImpl"
+   LoadComponentsLazily="true" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="EmployeeLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.EmployeeLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="UniformSetLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.UniformSetLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="OrganizationLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.OrganizationLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionLovVo1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.TransactionLovVo" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionIssueRequisitionLov1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.TransactionIssueRequisitionLov" >
+   </ViewUsage>
+   <ViewUsage
+      Name="SubinventoryLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.SubinventoryLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="LocatorLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LocatorLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="TransactionReturnRequisitionLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.TransactionReturnRequisitionLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionStatusLovVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionStatusLovVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="RequisitionTypeSearchPoplistVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.lov.server.RequisitionTypeSearchPoplistVO" >
+   </ViewUsage>
+</AppModule>

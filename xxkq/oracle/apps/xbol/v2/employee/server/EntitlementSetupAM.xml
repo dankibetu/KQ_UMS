@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+
+<AppModule
+   Name="EntitlementSetupAM"
+   ComponentClass="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupAMImpl"
+   LoadComponentsLazily="true" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_deployType" Value="0" />
+   </DesignTime>
+   <ViewUsage
+      Name="EntitlementSearchVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSearchVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EntitlementSetupHeaderVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupHeaderVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EntitlementSetupTransientVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupTransientVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EntitlementSetUpBusinessGroupVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetUpBusinessGroupVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EntitlementSetUpApproverVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetUpApproverVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="LocatorFndProfileVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.LocatorFndProfileVO" >
+   </ViewUsage>
+   <ViewUsage
+      Name="EntitlementSetupLineVO1"
+      ViewObjectName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupLineVO" >
+   </ViewUsage>
+</AppModule>

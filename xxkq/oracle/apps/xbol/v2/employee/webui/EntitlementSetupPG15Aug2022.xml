@@ -1,0 +1,218 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- dbdrv: exec java oracle/jrad/tools/xml/importer XMLImporter.class java &phase=dat+24 checkfile:~PROD:~PATH:~FILE &fullpath:~PROD:~PATH:~FILE -username &un_apps -password &pw_apps -dbconnection &jdbc_db_addr  -userId "1" -rootPackage /oracle/apps/~PROD  -rootdir &fullpath:~PROD:mds:directory  -->
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" windowTitle="Entitlement Setup Page" title="Entitlement Setup" amDefName="xxkq.oracle.apps.xbol.v2.employee.server.EntitlementSetupAM" controllerClass="xxkq.oracle.apps.xbol.v2.employee.webui.EntitlementSetupCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:labeledFieldLayout id="EntitlementSetupHeaderVO1" columns="4">
+               <ui:contents>
+                  <oa:messageStyledText id="BusinessGroupId" dataType="VARCHAR2" prompt="Business Group" viewName="EntitlementSetupHeaderVO1" viewAttr="Businessgroupname" queryable="false" maximumLength="240"/>
+                  <oa:messageLovInput id="Positionid" dataType="VARCHAR2" prompt="Position" viewName="EntitlementSetupHeaderVO1" viewAttr="Positionname" queryable="true" disabled="${oa.EntitlementSetupTransientVO1.HeaderFields}" required="yes">
+                     <lovContents>
+                        <oa:listOfValues id="PositionIdLOVRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                           <ui:contents>
+                              <oa:table name="PositionIdLOVRN" id="PositionLovVO1">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="item1" dataType="VARCHAR2" prompt="Position" viewName="PositionLovVO1" viewAttr="Name" maximumLength="240" queryable="true"/>
+                                    <oa:formValue id="PositionId1" dataType="NUMBER" prompt="Position Id" viewName="PositionLovVO1" viewAttr="PositionId" queryable="false"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap12" lovItem="item1" resultTo="Positionid" criteriaFrom="Positionid"/>
+                        <lovMap id="lovMap13" lovItem="PositionId1" resultTo="PositionIdFormValue" criteriaFrom="PositionIdFormValue"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageLovInput id="LocationId" dataType="VARCHAR2" prompt="Location" viewName="EntitlementSetupHeaderVO1" viewAttr="Locationcode" readOnly="false" disabled="${oa.EntitlementSetupTransientVO1.HeaderFields}" required="yes">
+                     <lovContents>
+                        <oa:listOfValues id="LocationLOVRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                           <ui:contents>
+                              <oa:table name="LocationLOVRN" id="LocationLovVO1">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="LocationCode" dataType="VARCHAR2" prompt="Location" viewName="LocationLovVO1" viewAttr="LocationCode" maximumLength="60" queryable="true"/>
+                                    <oa:formValue id="LocationId1" dataType="NUMBER" prompt="Location Id" viewName="LocationLovVO1" viewAttr="LocationId" queryable="false"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap9" lovItem="LocationCode" resultTo="LocationId" criteriaFrom="LocationId"/>
+                        <lovMap id="lovMap10" lovItem="LocationId1" criteriaFrom="LocationIdFormValue" resultTo="LocationIdFormValue"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageChoice id="Gender" dataType="VARCHAR2" prompt="Gender" viewName="EntitlementSetupHeaderVO1" viewAttr="Gender" pickListViewDef="xxkq.oracle.apps.xbol.v2.employee.poplist.server.GenderVO" pickListViewName="GenderVO1" pickListDispAttr="Meaning" pickListValAttr="Code" readOnly="false" disabled="${oa.EntitlementSetupTransientVO1.HeaderFields}" required="yes">
+                     <ui:primaryClientAction>
+                        <ui:firePartialAction event="UniformSetNameEvent"/>
+                     </ui:primaryClientAction>
+                  </oa:messageChoice>
+                  <oa:messageLovInput id="UniformSetName" dataType="VARCHAR2" prompt="Uniform Set Name" maximumLength="100" viewName="EntitlementSetupHeaderVO1" viewAttr="UniformSetName" queryable="true" required="yes">
+                     <lovContents>
+                        <oa:listOfValues id="UniformSetNameLovRN" amDefName="xxkq.oracle.apps.xbol.v2.employee.lov.server.LOVAM">
+                           <ui:contents>
+                              <oa:table name="UniformSetNameLovRN" id="EntitlementUniformSetNameLovVO1">
+                                 <ui:contents>
+                                    <oa:formValue id="Uniformsetidforvalue" dataType="NUMBER" prompt="Uniformsetid" viewName="UniformRetUniformSetNameLovVO1" viewAttr="Uniformsetid"/>
+                                    <oa:messageStyledText id="Uniformsetname" dataType="VARCHAR2" prompt="Uniformsetname" viewName="UniformRetUniformSetNameLovVO1" viewAttr="Uniformsetname" maximumLength="100" queryable="true"/>
+                                    <oa:formValue id="Personidformvalue" dataType="NUMBER" prompt="Personid" viewName="UniformRetUniformSetNameLovVO1" viewAttr="Personid"/>
+                                 </ui:contents>
+                              </oa:table>
+                           </ui:contents>
+                        </oa:listOfValues>
+                     </lovContents>
+                     <lovMappings>
+                        <lovMap id="lovMap42" lovItem="Uniformsetname" resultTo="UniformSetName" criteriaFrom="UniformSetName"/>
+                        <lovMap id="lovMap43" lovItem="Personidformvalue" criteriaFrom="PersonIdFormValue"/>
+                        <lovMap id="lovMap44" lovItem="Uniformsetidforvalue" resultTo="UniformSetIdFormValue"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageTextInput id="StartDate" dataType="DATE" prompt="Start Date" viewName="EntitlementSetupHeaderVO1" viewAttr="StartDate" disabled="${oa.EntitlementSetupTransientVO1.HeaderFields}" required="no"/>
+                  <oa:messageTextInput id="EndDate" dataType="DATE" prompt="End Date" viewName="EntitlementSetupHeaderVO1" viewAttr="EndDate" disabled="${oa.EntitlementSetupTransientVO1.EndDate}"/>
+                  <oa:messageStyledText id="Status" dataType="VARCHAR2" prompt="Status" viewName="EntitlementSetupHeaderVO1" viewAttr="Status" maximumLength="100"/>
+                  <oa:messageTextInput id="Remarks" dataType="VARCHAR2" prompt="Remarks" viewName="EntitlementSetupHeaderVO1" viewAttr="Remarks" maximumLength="1999" disabled="${oa.EntitlementSetupTransientVO1.HeaderFields}"/>
+                  <oa:messageStyledText id="PreparerName" dataType="VARCHAR2" prompt="Preparer Name" viewName="EntitlementSetupHeaderVO1" viewAttr="PreparerName" maximumLength="200"/>
+                  <oa:messageStyledText id="ApproverItem" prompt="Approver"/>
+               </ui:contents>
+            </oa:labeledFieldLayout>
+            <oa:spacer id="SpacerItem" height="10"/>
+            <oa:advancedTable id="TableRN" viewName="EntitlementSetupLineVO1" text="Entitlement Line Details" blockSize="100" width="100%">
+               <ui:contents>
+                  <oa:column id="SrNoCol" columnDataFormat="textFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="SrNoColHead" prompt="Sr. No." sortState="no"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="LineNumber" dataType="NUMBER" prompt="LineNumber" viewAttr="LineNumber" columns="2" disabled="${oa.EntitlementSetupTransientVO1.LineFields}"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="ItemCategoryCol">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="ItemCategoryColHead" prompt="Item Category"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageLovInput id="CategoryId" dataType="VARCHAR2" prompt="Item Category" viewAttr="ItemCategory" disabled="${oa.EntitlementSetupTransientVO1.LineFields}" columns="60" required="no">
+                           <lovContents>
+                              <oa:listOfValues id="region1" amDefName="oracle.apps.fnd.framework.toolbox.labsolutions.server.FlexfieldAM">
+                                 <ui:contents>
+                                    <oa:table name="region1" id="ItemLovVO1">
+                                       <ui:contents>
+                                          <oa:messageStyledText id="CategoryId1" dataType="NUMBER" prompt="Category Id" viewName="ItemLovVO1" viewAttr="CategoryId" queryable="true" rendered="false"/>
+                                          <oa:messageStyledText id="ItemCategory" dataType="VARCHAR2" prompt="Item Category" viewName="ItemLovVO1" viewAttr="ItemCategory" maximumLength="120" queryable="true"/>
+                                       </ui:contents>
+                                    </oa:table>
+                                 </ui:contents>
+                              </oa:listOfValues>
+                           </lovContents>
+                           <lovMappings>
+                              <lovMap id="lovMap4" lovItem="ItemCategory" resultTo="CategoryId" criteriaFrom="CategoryId"/>
+                              <lovMap id="lovMap11" lovItem="CategoryId1" resultTo="ItemCategoryFormValue" criteriaFrom="ItemCategoryFormValue"/>
+                           </lovMappings>
+                        </oa:messageLovInput>
+                        <oa:formValue id="ItemCategoryFormValue" viewAttr="CategoryId"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="LifeExpCol">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="LifeExpColHead" prompt="Life Expectancy in Days"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="LifeExpectancy" dataType="NUMBER" prompt="Life Expectancy" viewAttr="LifeExpectancy" disabled="${oa.EntitlementSetupTransientVO1.LineFields}" required="no"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="EntitledQtyCol">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="EntitledQtyColHead" prompt="Entitled Quantity"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="EntitledQty" dataType="NUMBER" prompt="Entitled Quantity" viewAttr="EntitledQty" disabled="${oa.EntitlementSetupTransientVO1.LineFields}" required="no"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="RenewalQtyCol">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="RenewalQtyColHead" prompt="Renewal Quantity"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="RenewelQty" dataType="NUMBER" prompt="" viewAttr="RenewelQty" disabled="${oa.EntitlementSetupTransientVO1.LineFields}"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="RenewalEligibilityCol" columnDataFormat="iconButtonFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="RenewalEligibilityColHead" prompt="Renewal Eligibility"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageCheckBox id="RenewelEligibilityFlag" dataType="VARCHAR2" text="" prompt="" viewAttr="RenewelEligibilityFlag" disabled="${oa.EntitlementSetupTransientVO1.LineFields}"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="StatusCol" columnDataFormat="iconButtonFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="RStatusColHead" prompt="Status"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageCheckBox id="EnableFlag" dataType="VARCHAR2" text="" prompt="" viewAttr="EnableFlag" disabled="${oa.EntitlementSetupTransientVO1.LineFields}"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="MaternityCol" columnDataFormat="iconButtonFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="MaternityColHead1" prompt="Maternity" sortState="no"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageCheckBox id="MaternityFlag" dataType="VARCHAR2" prompt="" viewAttr="MaternityFlag" defaultValue="" text="" disabled="${oa.EntitlementSetupTransientVO1.MaternityHide}" required="no" rendered="true"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="UniformLimitedQuantityCol">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="UniformLimitedQuantityHead" prompt="Uniform Limited Quantity"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="UniformLimitedQuantity" prompt="Uniform Limited Quantity" dataType="NUMBER" viewAttr="UniformLimitedQty" disabled="${oa.EntitlementSetupTransientVO1.LineFields}"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="DeleteCol" columnDataFormat="iconButtonFormat" rendered="false">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="sortableHeader1" prompt="Delete"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:image id="DeleteItem" source="deleteicon_enabled.gif" prompt="Delete" viewAttr="DeleteTransient"/>
+                        <oa:switcher id="region2" viewAttr="DeleteTransient">
+                           <ui:case name="DeleteDisable">
+                              <oa:image id="DeleteDisable" source="deleteicon_disabled.gif" shortDesc="Delete employee action is disabled." imageHeight="24" imageWidth="24"/>
+                           </ui:case>
+                           <ui:case name="DeleteEnabled">
+                              <oa:image id="DeleteEnabled" source="deleteicon_enabled.gif" shortDesc="Delete employee action is enabled." imageHeight="24" imageWidth="24">
+                                 <ui:primaryClientAction>
+                                    <ui:fireAction event="delete delete delete  delete"/>
+                                 </ui:primaryClientAction>
+                              </oa:image>
+                           </ui:case>
+                        </oa:switcher>
+                     </ui:contents>
+                  </oa:column>
+               </ui:contents>
+               <ui:footer>
+                  <oa:tableFooter id="tableFooter1">
+                     <ui:contents>
+                        <oa:addTableRow id="addTableRow1" text="Add Another Item"/>
+                     </ui:contents>
+                  </oa:tableFooter>
+               </ui:footer>
+            </oa:advancedTable>
+            <oa:pageButtonBar id="PageButtonBarRN">
+               <ui:contents>
+                  <oa:button id="BackButton" text="Back" prompt="Back" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/EntitlementSearchPG"/>
+                  <oa:button id="ClearButtonItem" text="Clear" prompt="Clear" rendered="true" disabled="${oa.EntitlementSetupTransientVO1.Buttons}" destination="OA.jsp?page=/xxkq/oracle/apps/xbol/v2/employee/webui/EntitlementSetupPG&amp;retainAM=N"/>
+                  <oa:submitButton id="SaveButtonItem" text="Save" prompt="Save" rendered="true" disabled="${oa.EntitlementSetupTransientVO1.Buttons}"/>
+                  <oa:submitButton id="SubmitButtonItem" text="Submit" prompt="Submit" rendered="true" disabled="${oa.EntitlementSetupTransientVO1.Buttons}"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+            <oa:formValue id="BusinessGroupIdFormValue" viewName="EntitlementSetupHeaderVO1" viewAttr="BusinessGroupId" rendered="true"/>
+            <oa:formValue id="PositionIdFormValue" viewName="EntitlementSetupHeaderVO1" viewAttr="PositionId"/>
+            <oa:formValue id="LocationIdFormValue" viewName="EntitlementSetupHeaderVO1" viewAttr="LocationId"/>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>
